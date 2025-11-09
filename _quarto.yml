@@ -12,7 +12,7 @@ website:
   body-header: | 
       ¡El semillero de Investigación en Biología del Desarrollo y Plasticidad Neural les extiende una cálida bienvenida!
   margin-header: |
-      ![Universidad del Cauca](Logos/unicauca.png)
+      ![Universidad del Cauca](logos/unicauca.png)
   navbar:
     background: light
     logo: logo.png
