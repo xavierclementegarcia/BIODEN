@@ -3,6 +3,10 @@ title: "Finley Malloc"
 about:
   template: jolla
   image: logo.jpg
+format: 
+  html: 
+    header-includes:
+      -'<meta name="google-site-verification" content="h2lnvvhWpvnoK2cNWm9_9bdMCOZDnfvi_dNeRIm9GGM" />'
 ---
 
 El semillero de Biología del Desarrollo y Plasticidad Neural les da la bienvenida
