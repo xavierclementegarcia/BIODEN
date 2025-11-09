@@ -4,16 +4,25 @@ project:
 
 website:
   title: "BIODEN"
+  favicon: 'logo.png'
+  cookie-consent: 
+    type: express
+    style: interstitial
+    palette: dark
+  body-header: | 
+      ¡El semillero de Investigación en Biología del Desarrollo y Plasticidad Neural les extiende una cálida bienvenida!
+  margin-header: |
+      ![Universidad del Cauca](Logos/unicauca.png)
   navbar:
-    logo: logo.png
     background: light
+    logo: logo.png
     search: true
     left:
       - href: index.qmd
         text: Inicio
       - href: https://sites.google.com/unicauca.edu.co/bioden/integrantes
         text: Integrantes
-      - href: https://sites.google.com/unicauca.edu.co/bioden/eventos/webinar-neurolab
+      - href: https://sites.google.com/unicauca.edu.co/bioden/webinar-neurolab
         text: Webinar Neurolab
       - href: https://sites.google.com/unicauca.edu.co/bioden/material-educativo
         text: Material educativo
@@ -30,6 +39,9 @@ website:
         href: https://www.facebook.com/profile.php?id=61583453722433
       - icon: envelope
         href: mailto:bioden@unicauca.edu.co
+    collapse: true
+    reader-mode: true
+    toc: true
   page-footer:
     left: |
       Semillero de Biología del Desarrollo y Plasticidad Neural © 2025. All content licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). 
@@ -49,10 +61,11 @@ website:
 format:
   html:
     theme:
-      - cosmo
-      - brand
+      light: cosmo
+      dark: darkly
     css: styles.css
-    toc: true
+    code-overflow: scroll
+    anchor-sections: false
 
 editor: visual
 

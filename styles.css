@@ -1,1 +1,14 @@
-/* css styles */
+/* Hero image (portada principal) */
+.hero-image {
+  background-image: linear-gradient(rgba(0,0,0,.4), rgba(0,0,0,.4)), url(heroimag.jpg);
+  background-size: cover;
+  background-position: center;
+  height: 55vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  font-size: 3rem;
+  font-weight: bold;
+}
+

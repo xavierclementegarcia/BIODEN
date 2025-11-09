@@ -2,12 +2,14 @@
 title: "Bienvenidos a BIODEN"
 format:
   html:
+    css: styles.css
+    toc: true
+    sidebar: false
     header-includes:
       - '<meta name="google-site-verification" content="h2lnvvhWpvnoK2cNWm9_9bdMCOZDnfvi_dNeRIm9GGM" />'
 ---
 
-
-¡El semillero de Investigación en Biología del Desarrollo y Plasticidad Neural les extiende una cálida bienvenida!
+## Acerca de nuestro semillero
 
 Nuestros estudios integran metodologías experimentales, computacionales y de simulación para abordar los mecanismos celulares, genéticos y epigenéticos que participan en el desarrollo embrionario y la plasticidad neural.
 
@@ -36,3 +38,25 @@ Utilizamos diversas herramientas bioinformáticas para el modelado de proteínas
 :::::
 
 Paralelamente, evaluamos propiedades toxicológicas y citotóxicas para contribuir a la identificación de compuestos con potencial terapéutico seguro.
+
+## Lineas de investigación
+
+-   Mecanismos moleculares asociados a neurodegeneración
+
+-   Abordajes farmacológicos a través de fitoquímica
+
+-   Búsqueda de fármacos mediante herramientas bioinformáticas
+
+-   Abordajes *in silico* e *in vivo*
+
+-   Estudios toxicológicos y citogenéticos
+
+## Instituciones a las que está adscrita el semillero
+
+Aquí puedes ver nuestra colobaración con otras Universidades y laboratorios
+
+![](logos/adscritos.png){.img-fluid .rounded-3 .shadow width="4149"}
+
+
+## Relaciones interinstitucionales
+![](logos/interinstitucionales.png){.img-fluid .rounded-3 .shadow width="4149"}
