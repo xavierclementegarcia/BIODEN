@@ -28,7 +28,21 @@ website:
         href: https://www.instagram.com/dbg_unicauca/
       - icon: facebook
         href: https://www.facebook.com/profile.php?id=61583453722433
-      
+      - icon: envelope
+        href: mailto:bioden@unicauca.edu.co
+  page-footer:
+    left: |
+      Semillero de Biología del Desarrollo y Plasticidad Neural © 2025. All content licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). 
+      Sitio web desarrollado por Xavier Clemente García Cevallos y Diego Fernando Dueñas Paz
+
+    center: 
+      - icon: github
+        href: https://github.com/xavierclementegarcia
+      - icon: envelope
+        href: mailto:bioden@unicauca.edu.co
+    right: |
+      Made with <a href="https://www.r-project.org/"><img src="https://www.r-project.org/Rlogo.png" alt="R" width="25px"></a> 
+      and <a href="https://quarto.org/"><img src="https://quarto.org/quarto.png" alt="Quarto" width="65px"></a>.
         
       
 

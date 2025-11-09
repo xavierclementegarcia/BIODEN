@@ -1,11 +1,37 @@
 ---
-title: "Bienvenidoa a BIODEN"
+title: "Bienvenidos a BIODEN"
 format: 
   html: 
     header-includes:
       -'<meta name="google-site-verification" content="h2lnvvhWpvnoK2cNWm9_9bdMCOZDnfvi_dNeRIm9GGM" />'
 ---
 
-El semillero de Biología del Desarrollo y Plasticidad Neural (BIODEN) les da una cálida bienvenida.
+¡El semillero de Investigación en Biología del Desarrollo y Plasticidad Neural les extiende una cálida bienvenida!
 
-El semillero estudia los mecanismos celulares, genéticos, epigenéticos y ambientales que regulan el desarrollo embrionario en animales y plantas, así como los procesos asociados a la plasticidad neural. Integra enfoques **in vitro**, **in vivo** e **in silico** para comprender la dinámica de la diferenciación celular, la expresión génica y la interacción entre ambiente y desarrollo, buscando aportar al entendimiento de la biología del desarrollo y sus implicaciones evolutivas, biomédicas y biotecnológicas.
+Nuestros estudios integran metodologías experimentales, computacionales y de simulación para abordar los mecanismos celulares, genéticos y epigenéticos que participan en el desarrollo embrionario y la plasticidad neural.
+
+Además, orientamos nuestros esfuerzos hacia el descubrimiento de fármacos mediante virtual screening de metabolitos derivados de plantas medicinales, hongos y otros organismos de interés biológico, evaluando su interacción con proteínas blanco asociadas a procesos neuronales y del desarrollo.
+
+::::: {.grid .gap-4}
+::: g-col-6
+![](im1.png){.img-fluid .rounded-3 .shadow width="3892"}
+:::
+
+::: g-col-6
+![](im2.png){.img-fluid .rounded-3 .shadow width="4149"}
+:::
+:::::
+
+Utilizamos diversas herramientas bioinformáticas para el modelado de proteínas, el diseño de farmacóforos, análisis QSAR, acoplamiento molecular, dinámica molecular y otros enfoques complementarios según el objetivo de estudio.
+
+::::: {.grid .gap-4}
+::: g-col-6
+![](im3.png){.img-fluid .rounded-3 .shadow width="4149"}
+:::
+
+::: g-col-6
+![](im4.png){.img-fluid .rounded-3 .shadow width="4149"}
+:::
+:::::
+
+Paralelamente, evaluamos propiedades toxicológicas y citotóxicas para contribuir a la identificación de compuestos con potencial terapéutico seguro.
