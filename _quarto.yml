@@ -6,7 +6,7 @@ website:
   title: "BIODEN"
   navbar:
     logo: logo.png
-    background: dark
+    background: light
     search: true
     left:
       - href: index.qmd

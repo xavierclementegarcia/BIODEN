@@ -3,7 +3,7 @@ title: "Bienvenidos a BIODEN"
 format: 
   html: 
     header-includes:
-      -'<meta name="google-site-verification" content="h2lnvvhWpvnoK2cNWm9_9bdMCOZDnfvi_dNeRIm9GGM" />'
+      -'<meta name="google-site-verification"content="h2lnvvhWpvnoK2cNWm9_9bdMCOZDnfvi_dNeRIm9GGM" />'
 ---
 
 ¡El semillero de Investigación en Biología del Desarrollo y Plasticidad Neural les extiende una cálida bienvenida!
