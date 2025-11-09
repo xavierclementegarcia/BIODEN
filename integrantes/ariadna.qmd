@@ -1,0 +1,28 @@
+---
+title: "Ariadna Vasquez Ledezma"
+subtitle: "Estudiante de Biología — Universidad del Cauca"
+image: fotos/ariadna.jpg
+format:
+  html:
+    toc: true
+    css: card.css
+margin-header: |
+  ![Ariadna Vasquez Ledezma](fotos/ariadna.jpg)
+---
+
+### Perfil
+Me desempeño en el área de Toxicología Genética y Citogenética, con enfoque en Epigenética, Biología del Desarrollo y Salud Ambiental. Mi trabajo se centra en la evaluación de factores de riesgo asociados a la exposición a contaminantes, integrando herramientas moleculares y celulares para comprender los mecanismos de daño genético. Actualmente desarrollo investigaciones sobre los efectos del material particulado en la salud humana, especialmente en poblaciones ocupacionalmente expuestas, con el objetivo de aportar evidencia científica que oriente estrategias de prevención y protección de la salud.
+
+### Lineas de investigación 
+- Toxicología genética y citogenética
+- Epigenética y Biología del Desarrollo
+- Salud ambiental y exposición a contaminantes
+- Aplicación en prevención y salud pública
+
+### Hoja de vida 
+[Curriculum vitae](https://scienti.minciencias.gov.co/cvlac/visualizador/generarCurriculoCv.do?cod_rh=0002322603)
+
+### Contacto
+[E-mail](ariadnavasquez@unicauca.edu.co)
+[ORCID](https://orcid.org/0009-0004-7330-0052)
+[Linkedin](ariadnavasquez@unicauca.edu.co)

@@ -1,0 +1,23 @@
+---
+title: "Willian Orlando Castillo Ordóñez, PhD."
+subtitle: "Profesor del Departamento de Biología - Mentor del semillero — Universidad del Cauca"
+image: fotos/willian.jpeg
+format:
+  html:
+    toc: true
+    css: card.css
+margin-header: |
+  ![Willian Orlando Castillo Ordóñez, PhD](fotos/willian.jpeg)
+---
+
+### Perfil
+
+### Líneas de investigación
+
+### Publicaciones
+
+### Grupo de Investigación
+
+### Hoja de vida
+
+### Contacto

@@ -1,0 +1,14 @@
+---
+title: "Integrantes del Semillero de Biología del Desarrollo y Plasticidad Neural - BIODEN"
+format:
+  html:
+    toc: false
+    css: integrantes/card.css
+listing:
+  contents: integrantes
+  type: grid
+  grid-columns: 3
+  fields: [image, title, subtitle]
+  sort: title
+---
+

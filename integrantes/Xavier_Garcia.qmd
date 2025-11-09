@@ -1,0 +1,33 @@
+---
+title: "Xavier Clemente García Cevallos"
+subtitle: "Estudiante de Biología — Coordinador del Semillero — Universidad del Cauca"
+image: fotos/xavier.jpg
+format:
+  html:
+    toc: true
+    css: card.css
+margin-header: |
+  ![Xavier Clemente García Cevallos](fotos/xavier.jpg)
+---
+
+### Perfil
+Mis líneas de interés incluyen la bioprospección de metabolitos, modelamiento molecular y la neurotoxicidad en organismos modelo como *Drosophila melanogaster*.
+
+### Líneas de investigación
+- Bioinformática estructural y dinámica molecular  
+- Neurotoxicología ambiental  
+- Quimioinformática (*in silico drug discovery*)
+- Neurobiología y biología del desarrollo 
+- Botánica de gimnospermas y angiospermas
+
+### Hoja de vida
+Podrás acceder a mi curriculum vitae en el siguiente enlace
+
+[Curriculum vitae](https://xavierclementegarcia.github.io/English.pdf)
+
+### Contacto
+[E-mail](mailto:xgarcia@unicauca.edu.co) 
+<br>
+[GitHub](https://github.com/xavierclementegarcia)
+<br>
+[Website](https://xavierclementegarcia.github.io/)
