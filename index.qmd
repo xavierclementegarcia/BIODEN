@@ -2,7 +2,7 @@
 title: "Finley Malloc"
 about:
   template: jolla
-  image: logo.jpg
+  image: logo.png
 format: 
   html: 
     header-includes:
