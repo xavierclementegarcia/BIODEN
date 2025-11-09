@@ -2,12 +2,7 @@
 title: "Finley Malloc"
 about:
   template: jolla
-  image: profile.jpg
-  links:
-    - icon: twitter
-      text: twitter
-      href: https://twitter.com
-    - icon: github
-      text: Github
-      href: https://github.com
+  image: logo.jpg
 ---
+
+El semillero de Biología del Desarrollo y Plasticidad Neural les da la bienvenida

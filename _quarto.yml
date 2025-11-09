@@ -1,5 +1,6 @@
 project:
   type: website
+  output-dir: docs
 
 website:
   title: "Biología del Desarrollo y Plasticidad Neural-BIODEN"
