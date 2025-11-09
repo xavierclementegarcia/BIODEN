@@ -3,8 +3,9 @@ project:
   output-dir: docs
 
 website:
-  title: "Biología del Desarrollo y Plasticidad Neural-BIODEN"
+  title: "BIODEN"
   navbar:
+    logo: logo.png
     background: dark
     search: true
     left:
