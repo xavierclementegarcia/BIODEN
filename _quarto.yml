@@ -20,9 +20,9 @@ website:
         text: Integrantes
       - href: https://sites.google.com/unicauca.edu.co/bioden/webinar-neurolab
         text: Webinar Neurolab
-      - href: https://sites.google.com/unicauca.edu.co/bioden/material-educativo
-        text: Material educativo
       - href: material_educativo.qmd
+        text: Material educativo
+      - href: https://sites.google.com/unicauca.edu.co/bioden/eventos
         text: Eventos
       - href: https://sites.google.com/unicauca.edu.co/bioden/bolet%C3%ADn
         text: Boletín Bioden

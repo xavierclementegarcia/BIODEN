@@ -23,6 +23,8 @@ Me desempeño en el área de Toxicología Genética y Citogenética, con enfoque
 [Curriculum vitae](https://scienti.minciencias.gov.co/cvlac/visualizador/generarCurriculoCv.do?cod_rh=0002322603)
 
 ### Contacto
-[E-mail](ariadnavasquez@unicauca.edu.co)
+[E-mail](mailto:ariadnavasquez@unicauca.edu.co)
+<br>
 [ORCID](https://orcid.org/0009-0004-7330-0052)
+<br>
 [Linkedin](ariadnavasquez@unicauca.edu.co)
