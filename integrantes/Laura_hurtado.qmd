@@ -1,0 +1,35 @@
+---
+title: "Laura Sofia Hurtado Martinez"
+subtitle: "Estudiante de Biología — Universidad del Cauca"
+image: fotos/laura.jpg
+format:
+  html:
+    toc: true
+    css: card.css
+margin-header: |
+  ![Laura Sofia Hurtado Martinez](fotos/laura.jpg)
+---
+
+### Perfil
+
+Tengo un profundo interés por la genética humana, la biología molecular y la microbiología, áreas que me inspiran a entender cómo funciona la vida desde sus niveles más profundos. Soy una persona curiosa, observadora y motivada por descubrir nuevas formas de explicar los procesos biológicos y aplicar ese conocimiento en la ciencia y la salud. Me gusta aprender constantemente y participar en proyectos que despierten la creatividad y el pensamiento crítico, con el propósito de aportar a un futuro más innovador y sostenible.
+
+### Líneas de investigación
+
+-   Genética humana
+
+-   Biología molecular
+
+-   Microbiología
+
+-   Biotecnología
+
+### Hoja de vida
+
+[Curriculum vitae](https://scienti.minciencias.gov.co/cvlac/visualizador/generarCurriculoCv.do?cod_rh=0002358606)
+
+### Contacto
+
+[ORCID](https://orcid.org/0009-0000-9490-565X) 
+<br>
+[E-mail](mailto:laurashurtado@unicauca.edu.co)

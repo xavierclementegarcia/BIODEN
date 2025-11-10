@@ -1,5 +1,5 @@
 ---
-title: "Bienvenidos a BIODEN"
+title: "Bienvenidos al Semillero de Investigación en Biología del Desarrollo y Plasticidad Neural - BIODEN"
 format:
   html:
     css: styles.css

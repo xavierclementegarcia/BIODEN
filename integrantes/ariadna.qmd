@@ -11,20 +11,20 @@ margin-header: |
 ---
 
 ### Perfil
+
 Me desempeño en el área de Toxicología Genética y Citogenética, con enfoque en Epigenética, Biología del Desarrollo y Salud Ambiental. Mi trabajo se centra en la evaluación de factores de riesgo asociados a la exposición a contaminantes, integrando herramientas moleculares y celulares para comprender los mecanismos de daño genético. Actualmente desarrollo investigaciones sobre los efectos del material particulado en la salud humana, especialmente en poblaciones ocupacionalmente expuestas, con el objetivo de aportar evidencia científica que oriente estrategias de prevención y protección de la salud.
 
-### Lineas de investigación 
-- Toxicología genética y citogenética
-- Epigenética y Biología del Desarrollo
-- Salud ambiental y exposición a contaminantes
-- Aplicación en prevención y salud pública
+### Lineas de investigación
 
-### Hoja de vida 
+-   Toxicología genética y citogenética
+-   Epigenética y Biología del Desarrollo
+-   Salud ambiental y exposición a contaminantes
+-   Aplicación en prevención y salud pública
+
+### Hoja de vida
+Podrás acceder a mi curriculum vitae en el siguiente enlace
 [Curriculum vitae](https://scienti.minciencias.gov.co/cvlac/visualizador/generarCurriculoCv.do?cod_rh=0002322603)
 
 ### Contacto
-[E-mail](mailto:ariadnavasquez@unicauca.edu.co)
-<br>
-[ORCID](https://orcid.org/0009-0004-7330-0052)
-<br>
-[Linkedin](https://www.linkedin.com/in/ariadna-vasquez-ledezma-0330b538a/)
+
+[E-mail](mailto:ariadnavasquez@unicauca.edu.co) <br> [ORCID](https://orcid.org/0009-0004-7330-0052) <br> [Linkedin](https://www.linkedin.com/in/ariadna-vasquez-ledezma-0330b538a/)

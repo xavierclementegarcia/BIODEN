@@ -1,0 +1,33 @@
+---
+title: "Vanessa Alexandra Meneses"
+subtitle: "Estudiante de Ingenierí Ambiental — Universidad del Cauca"
+image: fotos/Vanesa.jpg
+format:
+  html:
+    toc: true
+    css: card.css
+margin-header: |
+  ![Vanessa Alexandra Meneses](fotos/Vanesa.jpg)
+---
+
+### Perfil
+
+Soy una persona muy apasionada por la ciencia y la investigación, me encanta aprender constantemente.
+
+### Líneas de Investigación
+
+-   Biología Celular
+
+-   Microbiología
+
+### Hoja de vida
+
+Podrás acceder a mi curriculum vitae en el siguiente enlace
+
+[Curriculum vitae](https://scienti.minciencias.gov.co/cvlac/visualizador/generarCurriculoCv.do?cod_rh=0002424547)
+
+### Contacto
+
+[E-mail](mailto:vanessameneses@unicauca.edu.co)
+<br>
+

@@ -1,0 +1,35 @@
+---
+title: "Arbey Sebastián Guacialpud Cuaspud"
+subtitle: "Estudiante de Biología — Universidad del Cauca"
+image: fotos/sebastian.jpeg
+format:
+  html:
+    toc: true
+    css: card.css
+margin-header: |
+  ![Arbey Sebastián Guacialpud Cuaspud](fotos/sebastian.jpeg)
+---
+
+### Perfil 
+
+Apasionado por la investigación y curioso de los nuevos conocimientos de las ciencias biológicas y sus aplicaciones en la medicina moderna, además interesado en el desarrollo sostenible y la conservación de recursos naturales y la implementación de microorganismos para el desarrollo de sistemas agroecológicos . Igualmente la fitopatología ha sido una ciencia  que he explorado y que me ha brindado buenas bases para mi desarrollo profesional a futuro. 
+
+### Líneas de investigación 
+
+-   Bilogía molecular
+-   Biotecnología vegetal
+-   Microbiología
+-   Ciencias agrarias
+-   Fitopatología  
+
+### Hoja de vida 
+
+Podrás acceder a mi curriculum vitae en el siguiente enlace
+
+[Curriculum vitae](https://scienti.minciencias.gov.co/cvlac/visualizador/generarCurriculoCv.do?cod_rh=0002424486)
+
+### Contacto
+
+[E-mail](mailto:Arbey@unicauca.edu.co) <br> 
+[Linkedin](https://www.linkedin.com/in/arbey-guacialpud-bb4946339/) 
+[ORCID](https://orcid.org/0009-0003-0602-2366) 

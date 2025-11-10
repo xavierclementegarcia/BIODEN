@@ -12,3 +12,10 @@ listing:
   sort: title
 ---
 
+Todos nuestros integrantes aparecerán listados aquí. Usted podrá acceder a cada perfil listado aquí.
+
+## Integrantes actuales
+
+![](integrantes/fotos/todos.jpg){fig-align="center" width="408"}
+
+-   Para acceder a más material fotográfico del semillero podrá acceder haciendo [clic aquí](multimedia.qmd)

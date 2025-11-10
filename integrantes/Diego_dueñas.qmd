@@ -1,0 +1,34 @@
+---
+title: "Diego Fernando Dueñas Paz"
+subtitle: "Estudiante de Biología — Universidad del Cauca"
+image: fotos/Diego_d.jpeg
+format:
+  html:
+    toc: true
+    css: card.css
+margin-header: |
+  ![Diego Fernando Dueñas Paz](fotos/Diego_d.jpeg)
+---
+
+### Perfil
+
+Me intereso en la biología del desarrollo, la taxonomía y la ecología de insectos, especialmente del orden Hemiptera. Mi trabajo se centra en comprender los procesos de desarrollo en metábolos y hemimetábolos, explorando cómo las transformaciones morfológicas a lo largo del ciclo de vida se relacionan con la adaptación ecológica y la interacción con las plantas hospederas
+
+
+### Líneas de investigación 
+
+-   Relaciones planta–insecto y selección del hospedero
+-   Influencia de los factores estructurales y químicos de las plantas sobre los insectos.
+-   Comportamiento y desarrollo postembrionario de los insectos.
+-   Integración de enfoques de morfología, fisiología y ecología evolutiva.
+
+### Hoja de vida
+
+Podrás acceder a mi curriculum vitae en el siguiente enlace
+
+[Curriculum vitae](https://scienti.minciencias.gov.co/cvlac/visualizador/generarCurriculoCv.do?cod_rh=0002278876)
+
+### Contacto
+
+[E-mail](mailto:diegoduenas@unicauca.edu.co) <br> 
+[ORCID](https://orcid.org/0009-0000-6478-1641) 
