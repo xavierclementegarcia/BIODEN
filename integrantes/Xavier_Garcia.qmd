@@ -16,8 +16,8 @@ Mis líneas de interés incluyen la bioprospección de metabolitos, modelamiento
 
 ### Líneas de investigación
 
--   Bioinformática estructural y dinámica molecular\
--   Neurotoxicología ambiental\
+-   Bioinformática estructural y dinámica molecular
+-   Neurotoxicología ambiental
 -   Quimioinformática (*in silico drug discovery*)
 -   Neurobiología y biología del desarrollo
 -   Botánica de gimnospermas y angiospermas

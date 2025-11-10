@@ -1,13 +1,13 @@
 ---
 title: "Arbey Sebastián Guacialpud Cuaspud"
 subtitle: "Estudiante de Biología — Universidad del Cauca"
-image: fotos/sebastian.jpeg
+image: fotos/sebastian.jpg
 format:
   html:
     toc: true
     css: card.css
 margin-header: |
-  ![Arbey Sebastián Guacialpud Cuaspud](fotos/sebastian.jpeg)
+  ![Arbey Sebastián Guacialpud Cuaspud](fotos/sebastian.jpg)
 ---
 
 ### Perfil 
