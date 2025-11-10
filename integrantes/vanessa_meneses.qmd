@@ -1,6 +1,6 @@
 ---
 title: "Vanessa Alexandra Meneses"
-subtitle: "Estudiante de Ingenierí Ambiental — Universidad del Cauca"
+subtitle: "Estudiante de Ingeniería Ambiental — Universidad del Cauca"
 image: fotos/Vanesa.jpg
 format:
   html:
@@ -28,6 +28,4 @@ Podrás acceder a mi curriculum vitae en el siguiente enlace
 
 ### Contacto
 
-[E-mail](mailto:vanessameneses@unicauca.edu.co)
-<br>
-
+[E-mail](mailto:vanessameneses@unicauca.edu.co) <br>
