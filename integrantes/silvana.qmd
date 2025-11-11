@@ -1,0 +1,53 @@
+---
+title: "Silvana Giuliatti, PhD"
+subtitle: "Profesora de la Facultad de Medicina USP - Externo - Universidade de São Paulo"
+image: fotos/silvana.png
+format:
+  html:
+    toc: true
+    css: card.css
+margin-header: |
+  ![Silvana Giuliatti](fotos/silvana.png)
+---
+
+### Perfil
+
+Soy licenciada en Física por la Universidade Estadual Paulista Júlio de Mesquita Filho (1989), magíster en Medicina por la Universidade de São Paulo (1993) y doctora en Medicina por la misma institución (2000). Actualmente me desempeño como profesora en la Universidad de São Paulo, donde desarrollo investigación en la intersección entre la biomedicina, la modelación computacional y la bioinformática.
+
+Mi trabajo se centra en la aplicación de enfoques computacionales e ***in silico*** para el estudio de enfermedades neurodegenerativas, especialmente la enfermedad de Alzheimer, así como en la investigación de procesos de patogénesis viral, como los asociados al virus del papiloma humano (HPV).
+
+Cuento con amplia experiencia en el análisis de datos biológicos, el modelamiento molecular y la biología de sistemas, herramientas que empleo para comprender los mecanismos moleculares de la enfermedad y proponer nuevas estrategias terapéuticas. A lo largo de mi trayectoria, he promovido la colaboración interdisciplinaria entre las áreas de medicina, ciencias computacionales y biología molecular, contribuyendo al desarrollo de herramientas bioinformáticas aplicadas a la investigación biomédica y al descubrimiento de fármacos.
+
+### Líneas de investigación
+
+-   Bioinformática estructural y diseño de fármacos
+-   Modelado molecular y estudios in silico de enfermedades neurodegenerativas y neurofarmacología
+-   Genómica funcional y transcriptómica aplicada a enfermedades humanas
+-   Genética inmunológica y regulación postranscripcional
+-   Farmacología y toxicología de productos naturales
+-   Bioinformática de virus y proteínas intrínsecamente desordenadas
+-   Biología vegetal y respuesta ambiental
+
+### Publicaciones
+
+1.  Castelli, E. C., Moreau, P., Chiromatzo, A. O., Mendes-Junior, C. T., Veiga-Castelli, L. C., Yao, Y., Giuliatti, S., & Donadi, E. A. (2009). In silico analysis of microRNAs targeting the HLA-G 3′ untranslated region alleles and haplotypes. Human Immunology, 70(12), 1020–1025. https://doi.org/10.1016/j.humimm.2009.07.014
+
+2.  Meola, J., Silva, J. C. R. e, Dentillo, D. B., da Silva Jr, W. A., Veiga-Castelli, L. C., Giuliatti, S., & Ferriani, R. A. (2010). Differentially expressed genes in eutopic and ectopic endometrium of women with endometriosis. Fertility and Sterility, 93(6), 1750–1773. https://doi.org/10.1016/j.fertnstert.2009.01.103
+
+3.  Tamarozzi, E. R., & Giuliatti, S. (2018). Understanding the role of intrinsic disorder of viral proteins in the oncogenicity of different types of HPV. International Journal of Molecular Sciences, 19(1), 198. https://doi.org/10.3390/ijms19010198
+
+4.  Cruz, J. V., Serafim, R. B., da Silva, G. M., Giuliatti, S., Rosa, J. M. C., Araújo Neto, M. F., & Dos Santos, C. B. R. (2018). Computational design of new protein kinase 2 inhibitors for the treatment of inflammatory diseases using QSAR, pharmacophore-structure-based virtual screening, and molecular dynamics. Journal of Molecular Modeling, 24(9), 225. https://doi.org/10.1007/s00894-018-3752-2
+
+5.  Dos Santos, C. B. R., da Silva Ramos, R., Ortiz, B. L. S., da Silva, G. M., & Giuliatti, S. (2018). Oil from the fruits of Pterodon emarginatus Vog.: A traditional anti-inflammatory. Study combining in vivo and in silico. Journal of Ethnopharmacology, 222, 107–120. https://doi.org/10.1016/j.jep.2018.04.035
+
+6.  Braun, G. H., Jorge, D. M. M., Ramos, H. P., Alves, R. M., da Silva, V. B., & Giuliatti, S. (2008). Molecular dynamics, flexible docking, virtual screening, ADMET predictions, and molecular interaction field studies to design novel potential MAO-B inhibitors. Journal of Biomolecular Structure and Dynamics, 25(4), 347–355. https://doi.org/10.1080/07391102.2008.10507163
+
+### Hoja de vida
+
+Podrás acceder a mi curriculum vitae en el siguiente enlace
+
+[Curriculum vitae](https://buscatextual.cnpq.br/buscatextual/visualizacv.do;jsessionid=0BBD1001A336A4D971512DB696814186.buscatextual_0)
+
+### Contacto
+
+[E-mail](mailto:silvana@fmrp.usp.br) <br> [ORCID](https://orcid.org/0000-0002-7520-6420)

@@ -1,0 +1,19 @@
+---
+title: "Ana María Bravo Valencia"
+subtitle: "Bióloga — Egresada - Universidad del Cauca"
+image: fotos/juan.jpg
+format:
+  html:
+    toc: true
+    css: card.css
+margin-header: |
+  ![Ana María Bravo Valencia](fotos/juan.jpg)
+---
+
+### Perfil
+
+### Línea de Investigación
+
+### Hoja de vida 
+
+### Contacto

@@ -1,0 +1,19 @@
+---
+title: "Nohelia Cajas Salazar"
+subtitle: "Profesora del Departamento de Biología — Profesor asociado - Universidad del Cauca"
+image: fotos/juan.jpg
+format:
+  html:
+    toc: true
+    css: card.css
+margin-header: |
+  ![Nohelia Cajas Salazar](fotos/juan.jpg)
+---
+
+### Perfil
+
+### Línea de Investigación
+
+### Hoja de vida
+
+### Contacto

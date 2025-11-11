@@ -12,22 +12,30 @@ margin-header: |
 
 ### Perfil
 
-Mis líneas de interés incluyen la bioprospección de metabolitos, modelamiento molecular y la neurotoxicidad en organismos modelo como *Drosophila melanogaster*.
+Mi interés se centra en comprender los efectos neurotóxicos, genotóxicos y epigenéticos de compuestos naturales y sintéticos, así como en la identificación de metabolitos con potencial farmacológico para el tratamiento de enfermedades neurodegenerativas, especialmente el Alzheimer.
+
+Integro enfoques in vitro, ***in vivo*** e ***in silico***, aplicando herramientas de modelado molecular, predicción ADMET, docking molecular, dinámica molecular y análisis transcriptómico, con el propósito de explorar mecanismos biológicos y diseñar estrategias racionales de descubrimiento de fármacos de origen natural.
+
+Además, desarrollo proyectos en bioprospección vegetal y etnobotánica, orientados a validar científicamente el potencial medicinal de especies nativas, evaluando su viabilidad biológica, germinación y actividad neuroprotectora. Mi trabajo también abarca la neurotoxicología experimental con ***Drosophila melanogaster*** y el estudio del comportamiento y desarrollo en insectos frente a la exposición a tóxicos.
+
+Actualmente coordino el Semillero de Biología del Desarrollo y Plasticidad Neural de la Universidad del Cauca, donde promuevo la formación investigativa y la integración entre la biología computacional y experimental. Busco consolidar una trayectoria orientada a la investigación biomédica y farmacológica, contribuyendo al desarrollo de soluciones innovadoras basadas en la biodiversidad y la biología molecular.
 
 ### Líneas de investigación
 
--   Bioinformática estructural y dinámica molecular
--   Neurotoxicología ambiental
--   Quimioinformática (*in silico drug discovery*)
--   Neurobiología y biología del desarrollo
--   Botánica de gimnospermas y angiospermas
-
-### Hoja de vida
+-   Neurobiología y neurotoxicología experimental
+-   Bioinformática y biología computacional
+-   Bioprospección y etnobotánica
+-   Toxicología genética y ambiental
+-   Biología del desarrollo y comportamiento en insectos
+-   Ecología y conservación
+-   Botánica de gimnospermas y angiospermas \### Hoja de vida
 
 Podrás acceder a mi curriculum vitae en el siguiente enlace
 
-[Curriculum vitae](https://xavierclementegarcia.github.io/English.pdf) <br> [Curriculum - CVLAC](https://scienti.minciencias.gov.co/cvlac/visualizador/generarCurriculoCv.do?cod_rh=0002018236)
+[Curriculum vitae](https://xavierclementegarcia.github.io/English.pdf) <br> 
+[Curriculum - CVLAC](https://scienti.minciencias.gov.co/cvlac/visualizador/generarCurriculoCv.do?cod_rh=0002018236)
 
 ### Contacto
 
-[E-mail](mailto:xgarcia@unicauca.edu.co) <br> [Linkedin](https://www.linkedin.com/in/xavier-clemente-garc%C3%ADa-cevallos-b4727a206/) <br> [GitHub](https://github.com/xavierclementegarcia) <br> [Website](https://xavierclementegarcia.github.io/)
+[E-mail](mailto:xgarcia@unicauca.edu.co) <br> [Linkedin](https://www.linkedin.com/in/xavier-clemente-garc%C3%ADa-cevallos-b4727a206/) <br> [GitHub](https://github.com/xavierclementegarcia) <br> [ResearchGate](https://www.researchgate.net/profile/Xavier-Garcia-21?ev=hdr_xprf) <br> [ORCID](https://orcid.org/0000-0002-3284-2363) <br> 
+[Website](https://xavierclementegarcia.github.io/)

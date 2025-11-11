@@ -1,0 +1,37 @@
+---
+title: "Jennifer Marcela Achipiz Camacho"
+subtitle: "Estudiante de Biología — Universidad del Cauca"
+image: fotos/jennifer.jpg
+format:
+  html:
+    toc: true
+    css: card.css
+margin-header: |
+  ![Jennifer Marcela Achipiz Camacho](fotos/jennifer.jpg)
+---
+
+### Perfil
+
+Me intereso en el estudio de los hongos y de los compuestos que producen, con el objetivo de comprender cómo sus metabolitos influyen en los procesos neurobiológicos, fisiológicos y comportamentales de distintos organismos. Busco integrar enfoques de la biología molecular, genética y la toxicología para profundizar en los mecanismos de acción de estos compuestos. Además, me atraen la microbiología y la taxidermia como medios para explorar la diversidad biológica y fortalecer la comprensión y valoración de los organismos en distintos contextos.
+
+### Líneas de Investigación
+
+-   Micología y bioprospección de metabolitos fúngicos
+
+-   Neurobiología y toxicología de compuestos naturales
+
+-   Genética y biología molecular
+
+-   Microbiología ambiental y aplicada
+
+-   Taxidermia científica y divulgación de la biodiversidad
+
+### Hoja de vida
+
+Podrás acceder a mi curriculum vitae en el siguiente enlace
+
+[Curriculum vitae](https://scienti.minciencias.gov.co/cvlac/visualizador/generarCurriculoCv.do?cod_rh=0002208325)
+
+### Contacto
+
+[E-mail](mailto:jenniferachipiz@unicauca.edu.co) <br> [ORCID](https://orcid.org/0009-0001-5104-7437)

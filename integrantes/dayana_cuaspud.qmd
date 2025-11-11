@@ -1,0 +1,37 @@
+---
+title: "Dayana Estefanía Taimal Cuaspud"
+subtitle: "Estudiante de Biología — Universidad del Cauca"
+image: fotos/dayana.jpg
+format:
+  html:
+    toc: true
+    css: card.css
+margin-header: |
+  ![Dayana Estefanía Taimal Cuaspud](fotos/dayana.jpg)
+---
+
+### Perfil
+
+Mi formación y motivación se orientan hacia el estudio de las especies vegetales con potencial farmacológico, especialmente en el marco de la etnobotánica, que permite rescatar y validar los saberes tradicionales asociados al uso de plantas medicinales. Me apasiona explorar la relación entre la biodiversidad y la salud humana, buscando alternativas terapéuticas sostenibles a partir de los recursos naturales. También me interesan los campos de la toxicología, la citogenética, la biología molecular y la biotecnología, especialmente en temas relacionados con los efectos biológicos de compuestos naturales, la estabilidad genética, la regulación del ADN y las aplicaciones biotecnológicas en salud y conservación. Aspiro a contribuir al aprovechamiento sostenible de la biodiversidad mediante la investigación científica y la innovación biológica.
+
+### Líneas de Investigación
+
+-   Abordajes farmacológicos a través de fitoquímica
+
+-   Estudios toxicológicos y citogenéticos
+
+-   Estudios etnobotánicos
+
+-   Biología molecular
+
+-   Biotecnología
+
+### Hoja de vida
+
+Podrás acceder a mi curriculum vitae en el siguiente enlace
+
+[Curriculum vitae](https://scienti.minciencias.gov.co/cvlac/visualizador/generarCurriculoCv.do?cod_rh=0002322602)
+
+### Contacto
+
+[E-mail](mailto:dtaimal@unicauca.edu.co) <br> [ORCID](https://orcid.org/0009-0003-3939-5361)

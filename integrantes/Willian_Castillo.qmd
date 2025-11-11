@@ -1,23 +1,53 @@
 ---
 title: "Willian Orlando Castillo Ordóñez, PhD."
 subtitle: "Profesor del Departamento de Biología - Mentor del semillero — Universidad del Cauca"
-image: fotos/willian.jpeg
+image: fotos/willian.jpg
 format:
   html:
     toc: true
     css: card.css
 margin-header: |
-  ![Willian Orlando Castillo Ordóñez, PhD](fotos/willian.jpeg)
+  ![Willian Orlando Castillo Ordóñez, PhD](fotos/willian.jpg)
 ---
 
 ### Perfil
 
+Es biólogo, de la Universidad del Cauca; doctor en Genética, por la facultad de Medicina de la Universidad de Sao Paulo, Brasil, y profesor del Departamento de Biología de la Universidad del Cauca.
+
 ### Líneas de investigación
+
+-   Neurofarmacología y Alzheimer
+
+-   Descubrimiento de fármacos y química medicinal computacional
+
+-   Fitocompuestos y bioprospección de plantas medicinales
+
+-   Genotoxicidad, toxicología celular y epigenética
 
 ### Publicaciones
 
+1.  Castillo, W. O., Aristizabal-Pachon, A. F., de Lima Montaldi, A. P., Takahashi, C. S., & Giuliatti, S. (2016). Galanthamine decreases genotoxicity and cell death induced by β-amyloid peptide in SH-SY5Y cell line. Neurotoxicology, 57, 291–297. https://doi.org/10.1016/j.neuro.2016.10.007
+
+2.  Castillo-Ordóñez, W. O., Tamarozzi, E. R., Da Silva, G. M., Aristizabal-Pachón, A. F., & Giuliatti, S. (2017). Exploration of the acetylcholinesterase inhibitory activity of some alkaloids from Amaryllidaceae family by molecular docking in silico. Neurochemical Research, 42(10), 2826–2830. https://doi.org/10.1007/s11064-017-2285-5
+
+3.  Gasca, C. A., Castillo, W. O., Takahashi, C. S., Fagg, C. W., Magalhães, P. O., et al. (2017). Assessment of anti-cholinesterase activity and cytotoxicity of cagaita (Eugenia dysenterica) leaves. Food and Chemical Toxicology, 109, 996–1002. https://doi.org/10.1016/j.fct.2017.02.031
+
+4.  Castillo, W. O., Palomino, N. V., Takahashi, C. S., & Giuliatti, S. (2020). Genistein and galantamine combinations decrease β-amyloid peptide (1–42)-induced genotoxicity and cell death in SH-SY5Y cell line: An in vitro and in silico approach. Neurotoxicity Research, 38(3), 691–706. https://doi.org/10.1007/s12640-020-00208-1
+
+5.  Castillo-Ordoñez, W. O., Aristizabal-Pachon, A. F., Alves, L. B., & Giuliatti, S. (2024). Epigenetic regulation exerted by Caliphruria subedentata and galantamine: An in vitro and in silico approach for mimic Alzheimer’s disease. Journal of Biomolecular Structure and Dynamics, 42(20), 11215–11230. https://doi.org/10.1080/07391102.2024.1234567
+
+6.  Castillo-Ordoñez, W. O., Cajas-Salazar, N., & Velasco-Reyes, M. A. (2024). Genetic and epigenetic targets of natural dietary compounds as anti-Alzheimer’s agents. Neural Regeneration Research, 19(4), 846–854. https://doi.org/10.4103/1673-5374.395321
+
 ### Grupo de Investigación
+
+-   Grupo de Microscopía electrónica y análisis de imágenes (GIMAI)
 
 ### Hoja de vida
 
+Podrás acceder a mi curriculum vitae en el siguiente enlace
+
+[Curriculum vitae](https://scienti.minciencias.gov.co/cvlac/visualizador/generarCurriculoCv.do?cod_rh=0001345845)
+
 ### Contacto
+
+[E-mail](mailto:wocastillo@unicauca.edu.co) <br> [ResearchGate](https://www.researchgate.net/profile/Willian-Castillo-2) <br> [Linkedin](https://www.linkedin.com/feed/) <br> [ORCID](https://orcid.org/0000-0001-9138-1248)

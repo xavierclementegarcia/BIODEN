@@ -1,0 +1,35 @@
+---
+title: "Juan Enrique Potosi Ortiz"
+subtitle: "Estudiante de Biología — Universidad del Cauca"
+image: fotos/juan.jpg
+format:
+  html:
+    toc: true
+    css: card.css
+margin-header: |
+  ![Juan Enrique Potosi Ortiz](fotos/juan.jpg)
+---
+
+### Perfil
+
+Me interesan especialmente la toxicología, la genética, la inmunología, el cáncer y la bioinformática, disciplinas que permiten abordar la complejidad de la vida desde un enfoque molecular y sistémico. Mi formación se orienta hacia la investigación interdisciplinaria, integrando la ciencia básica con los desafíos sociales contemporáneos, con el propósito de generar conocimiento que contribuya a la prevención de enfermedades, la gestión del riesgo químico y la promoción de entornos saludables y sostenibles.
+
+### Líneas de Investigación
+
+-   Toxicología y citogenética
+
+-   Genética y Biología molecular
+
+-   Inmunología y cáncer
+
+-   Bioinformática
+
+### Hoja de vida
+
+Podrás acceder a mi curriculum vitae en el siguiente enlace
+
+[Curriculum vitae](https://scienti.minciencias.gov.co/cvlac/visualizador/generarCurriculoCv.do?cod_rh=0002103190)
+
+### Contacto
+
+[E-mail](mailto:juanpot@unicauca.edu.co) <br> [ORCID](https://orcid.org/0009-0007-0205-5792)

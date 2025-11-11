@@ -15,6 +15,4 @@ listing:
   sort: title
 ---
 
-En esta sección construida para que cualquier persona pueda acceder se encontrará una serie de materiales didatictos útiles para quienes quieran incursionar en las Ciencias Biológicas vistas desde una perspectiva computacional, además de otras herramientas útiles. Bienvenidos. 
-<br>
-Estén atentos a nuestros eventos y charlas para aprender más sobre el maravilloso mundo de la Biología Computacional. 
+En esta sección construida para que cualquier persona pueda acceder se encontrará una serie de materiales didatictos útiles para quienes quieran incursionar en las Ciencias Biológicas vistas desde una perspectiva computacional, además de otras herramientas útiles. Bienvenidos. <br> Estén atentos a nuestros eventos y charlas para aprender más sobre el maravilloso mundo de la Biología Computacional.

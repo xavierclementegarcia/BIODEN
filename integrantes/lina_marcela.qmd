@@ -1,0 +1,31 @@
+---
+title: "Lina Marcela Valencia Hernández"
+subtitle: "Estudiante de Biología — Universidad del Cauca"
+image: fotos/lina.jpg
+format:
+  html:
+    toc: true
+    css: card.css
+margin-header: |
+  ![Lina Marcela Valencia Hernández](fotos/lina.jpg)
+---
+
+### Perfil
+
+Aprendiendo, creciendo y viviendo a mi ritmo
+
+### Líneas de Investigación
+
+-   Ornitología
+
+-   Neurociencias
+
+### Hoja de vida
+
+Podrás acceder a mi curriculum vitae en el siguiente enlace
+
+[Curriculum vitae](https://scienti.minciencias.gov.co/cvlac/visualizador/generarCurriculoCv.do?cod_rh=0002210413)
+
+### Contacto
+
+[E-mail](mailto:linamvalencia@unicauca.edu.co)
