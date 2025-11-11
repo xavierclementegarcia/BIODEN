@@ -1,6 +1,6 @@
 ---
 title: "Javier Fernando Rosero Madroñero"
-subtitle: "Biólogo — Egresada - Universidad del Cauca"
+subtitle: "Biólogo — Egresado - Universidad del Cauca"
 image: fotos/juan.jpg
 format:
   html:
