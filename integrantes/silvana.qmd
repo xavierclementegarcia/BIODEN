@@ -12,7 +12,7 @@ margin-header: |
 
 ### Perfil
 
-Soy licenciada en Física por la Universidade Estadual Paulista Júlio de Mesquita Filho (1989), magíster en Medicina por la Universidade de São Paulo (1993) y doctora en Medicina por la misma institución (2000). Actualmente me desempeño como profesora en la Universidad de São Paulo, donde desarrollo investigación en la intersección entre la biomedicina, la modelación computacional y la bioinformática.
+Licenciada en Física por la Universidade Estadual Paulista Júlio de Mesquita Filho (1989), magíster en Medicina por la Universidade de São Paulo (1993) y doctora en Medicina por la misma institución (2000). Actualmente me desempeño como profesora en la Universidad de São Paulo, donde desarrollo investigación en la intersección entre la biomedicina, la modelación computacional y la bioinformática.
 
 Mi trabajo se centra en la aplicación de enfoques computacionales e ***in silico*** para el estudio de enfermedades neurodegenerativas, especialmente la enfermedad de Alzheimer, así como en la investigación de procesos de patogénesis viral, como los asociados al virus del papiloma humano (HPV).
 
