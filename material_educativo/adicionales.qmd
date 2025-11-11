@@ -1,0 +1,11 @@
+---
+title: "¿Necesitas visibilizarte? Guía de como crear ORCID, CVLAC y Linkedin"
+subtitle: "En esta guía encontrarás lo que necesitas."
+image: multimedia/album3.png
+format:
+  html:
+    toc: true
+    css: card.css
+margin-header: |
+  ![Xavier Clemente García Cevallos](multimedia/album3.png)
+---

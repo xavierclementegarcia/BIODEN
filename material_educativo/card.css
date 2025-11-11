@@ -1,0 +1,52 @@
+/* --- Estilos generales --- */
+body {
+  font-family: "Inter", sans-serif;
+}
+
+/* --- Tarjetas del listado de integrantes --- */
+.quarto-grid-item {
+  text-align: center;
+  border-radius: 12px;
+  padding: 10px;
+  transition: all 0.3s ease;
+  background-color: #f9f9f9;
+}
+
+.quarto-grid-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* --- Imagen circular --- */
+.quarto-grid-item img {
+  border-radius: 50%;
+  width: 160px;
+  height: 160px;
+  object-fit: cover;
+  margin-bottom: 10px;
+}
+
+/* --- Nombre y cargo --- */
+.quarto-grid-item .listing-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #333;
+}
+
+.quarto-grid-item .listing-subtitle {
+  font-size: 0.9rem;
+  color: #666;
+}
+
+/* --- Página individual --- */
+.page-title {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.page-header img {
+  display: block;
+  margin: 0 auto;
+  border-radius: 50%;
+  width: 200px;
+}

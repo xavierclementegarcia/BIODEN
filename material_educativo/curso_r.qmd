@@ -1,0 +1,31 @@
+---
+title: "¿Cómo programar en R sin morir en el intento?"
+subtitle: "En este curso abordará conceptos básicos que un biólogo debe saber sobre este lenguaje de programació."
+image: multimedia/album1.png
+format:
+  html:
+    toc: true
+    css: card.css
+margin-header: |
+  ![Xavier Clemente García Cevallos](multimedia/album1.png)
+---
+
+### Bienvenida al curso
+
+Este módulo introduce el uso del lenguaje R como herramienta fundamental para el análisis y visualización de datos en biología. A lo largo de las sesiones, los participantes desarrollarán competencias para comprender la lógica de programación, manipular conjuntos de datos experimentales o ecológicos, aplicar pruebas estadísticas básicas y especializadas, y producir representaciones gráficas de alta calidad.
+
+### Competencias esperadas:
+
+-   Comprender los principios básicos de programación y análisis reproducible.
+
+-   Importar, limpiar y transformar datos biológicos en R.
+
+-   Aplicar pruebas estadísticas adecuadas a diferentes tipos de datos experimentales.
+
+-   Realizar análisis ecológicos y ómicos con paquetes especializados.
+
+-   Generar figuras y reportes reproducibles de calidad científica.
+
+### Capítulos
+
+-   [Capítulo 1: Fundamentos básicos de R y lógica de programación](capitulos_r/Capitulo1.qmd)

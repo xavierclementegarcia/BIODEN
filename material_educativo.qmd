@@ -1,5 +1,20 @@
 ---
-title: "material Educativo"
-format: html
+title: "Cursos y talleres para Dummies propuestos por el Semillero BIODEN"
+format:
+  html:
+    toc: false
+    css: integrantes/card.css
+listing:
+  contents: 
+    - material_educativo/adicionales.qmd
+    - material_educativo/curso_r.qmd
+    - material_educativo/curso_python.qmd
+  type: grid
+  grid-columns: 3
+  fields: [image, title, subtitle]
+  sort: title
 ---
 
+En esta sección construida para que cualquier persona pueda acceder se encontrará una serie de materiales didatictos útiles para quienes quieran incursionar en las Ciencias Biológicas vistas desde una perspectiva computacional, además de otras herramientas útiles. Bienvenidos. 
+<br>
+Estén atentos a nuestros eventos y charlas para aprender más sobre el maravilloso mundo de la Biología Computacional. 
