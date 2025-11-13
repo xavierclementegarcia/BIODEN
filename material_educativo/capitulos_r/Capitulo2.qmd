@@ -1,0 +1,11 @@
+---
+title: "¿Cómo programar en R sin morir en el intento?"
+subtitle: "Capítulo 2"
+format:
+  html:
+    toc: true
+    css: style.css
+margin-header: |
+  ![Xavier Clemente García Cevallos](multimedia/album1.png)
+---
+

@@ -8,6 +8,7 @@ format:
     css: card.css
 margin-header: |
   ![Nohelia Cajas Salazar](fotos/juan.jpg)
+order: 3
 ---
 
 ### Perfil

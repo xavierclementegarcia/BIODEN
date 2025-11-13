@@ -8,6 +8,7 @@ format:
     css: card.css
 margin-header: |
   ![Ariadna Vasquez Ledezma](fotos/ariadna.jpg)
+order: 6
 ---
 
 ### Perfil

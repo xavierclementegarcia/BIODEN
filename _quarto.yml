@@ -30,6 +30,8 @@ website:
         text: Contacto
       - href: https://sites.google.com/unicauca.edu.co/bioden/solicitudes
         text: Solicitudes
+      - href: investigacion.qmd
+        text: Invesitgación
     right: 
       - icon: instagram
         href: https://www.instagram.com/dbg_unicauca/

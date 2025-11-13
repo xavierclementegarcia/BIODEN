@@ -8,6 +8,7 @@ format:
     css: card.css
 margin-header: |
   ![Willian Orlando Castillo Ordóñez, PhD](fotos/willian.jpg)
+order: 1
 ---
 
 ### Perfil
