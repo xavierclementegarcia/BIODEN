@@ -8,7 +8,7 @@ format:
     css: card.css
 margin-header: |
   ![Diego Fernando Dueñas Paz](fotos/Diego_d.jpeg)
-order: 5
+order: 6
 ---
 
 ### Perfil
