@@ -4,9 +4,19 @@ subtitle: "Capítulo 1"
 format:
   html:
     toc: true
+    toc-location: left
+    search: true
+    page-navigation: true
     css: style.css
 margin-header: |
-  ![Xavier Clemente García Cevallos](multimedia/album1.png)
+  <div style="text-align: center;">
+    <a href="https://xavierclementegarcia.github.io/BIODEN/material_educativo/curso_r.html" target="_blank">
+      <img src="multimedia/album1.png" alt="Xavier Clemente García Cevallos" width="200">
+    </a>
+    <p style="font-size: 0.8em; color: gray; margin-top: 5px;">
+      Xavier Clemente García Cevallos
+    </p>
+  </div>
 ---
 
 ## Capítulo 1: Fundamentos básicos de R y lógica de programación

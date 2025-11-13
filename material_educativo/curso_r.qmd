@@ -29,3 +29,4 @@ Este módulo introduce el uso del lenguaje R como herramienta fundamental para e
 ### Capítulos
 
 -   [Capítulo 1: Fundamentos básicos de R y lógica de programación](capitulos_r/Capitulo1.qmd)
+-   [Capítulo 2: Estadística descriptiva y pruebas básicas en R](capitulos_r/Capitulo2.qmd)

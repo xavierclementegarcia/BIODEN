@@ -20,6 +20,41 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -97,7 +132,7 @@ cookieconsent.run({
 <link rel="stylesheet" href="style.css">
 </head>
 
-<body class="nav-fixed quarto-light"><script id="quarto-html-before-body" type="application/javascript">
+<body class="floating nav-fixed quarto-light"><script id="quarto-html-before-body" type="application/javascript">
     const toggleBodyColorMode = (bsSheetEl) => {
       const mode = bsSheetEl.getAttribute("data-mode");
       const bodyEl = window.document.querySelector("body");
@@ -343,16 +378,30 @@ cookieconsent.run({
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <nav id="TOC" role="doc-toc" class="toc-active" data-toc-expanded="99">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#estadística-descriptiva-y-pruebas-básicas-en-r" id="toc-estadística-descriptiva-y-pruebas-básicas-en-r" class="nav-link active" data-scroll-target="#estadística-descriptiva-y-pruebas-básicas-en-r">Estadística descriptiva y pruebas básicas en R</a>
+  <ul class="collapse">
+  <li><a href="#conceptos-básicos" id="toc-conceptos-básicos" class="nav-link" data-scroll-target="#conceptos-básicos">Conceptos básicos</a></li>
+  <li><a href="#exploración-de-datos-en-r" id="toc-exploración-de-datos-en-r" class="nav-link" data-scroll-target="#exploración-de-datos-en-r">Exploración de datos en R</a></li>
+  <li><a href="#medidas-de-tendencia-central" id="toc-medidas-de-tendencia-central" class="nav-link" data-scroll-target="#medidas-de-tendencia-central">Medidas de tendencia central</a></li>
+  </ul></li>
+  </ul>
+</nav>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar"><div class="quarto-margin-header"><div class="margin-header-item">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="multimedia/album1.png" class="img-fluid figure-img"></p>
-<figcaption>Xavier Clemente García Cevallos</figcaption>
-</figure>
+<div style="text-align: center;">
+<a href="https://xavierclementegarcia.github.io/BIODEN/material_educativo/curso_r.html" target="_blank"> <img src="multimedia/album1.png" alt="Xavier Clemente García Cevallos" width="200"> </a>
+<p style="font-size: 0.8em; color: gray; margin-top: 5px;">
+Xavier Clemente García Cevallos
+</p>
 </div>
 </div></div>
-        
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -378,8 +427,166 @@ cookieconsent.run({
 </header>
 
 
+<section id="estadística-descriptiva-y-pruebas-básicas-en-r" class="level2">
+<h2 data-anchor-id="estadística-descriptiva-y-pruebas-básicas-en-r">Estadística descriptiva y pruebas básicas en R</h2>
+<section id="objetivos" class="level4">
+<h4 data-anchor-id="objetivos">Objetivos</h4>
+<ul>
+<li>Comprender los fundamentos de la <strong>estadística descriptiva</strong> aplicada a datos biológicos.<br>
+</li>
+<li>Calcular y visualizar medidas de tendencia central y dispersión.<br>
+</li>
+<li>Realizar pruebas estadísticas básicas (t de Student, ANOVA, Chi-cuadrado, correlación).<br>
+</li>
+<li>Interpretar los resultados en el contexto biológico.</li>
+</ul>
+</section>
+<section id="tip-relámpago" class="level4">
+<h4 data-anchor-id="tip-relámpago">Tip relámpago</h4>
+<ul>
+<li><p>¿Qué son variables y tipos de datos?</p></li>
+<li><p>¿Cómo crear y manipular dataframes en R?</p></li>
+</ul>
+</section>
+<section id="conceptos-básicos" class="level3">
+<h3 data-anchor-id="conceptos-básicos">Conceptos básicos</h3>
+<p>La <strong>estadística descriptiva</strong> resume y organiza la información contenida en los datos.<br>
+En biología, nos permite <strong>caracterizar poblaciones</strong>, <strong>comparar tratamientos</strong> o <strong>detectar patrones ecológicos</strong>.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Tipo de medida</th>
+<th>Qué indica</th>
+<th>Ejemplo biológico</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Tendencia central</strong></td>
+<td>Valor típico o promedio</td>
+<td>Longitud promedio de hojas</td>
+</tr>
+<tr class="even">
+<td><strong>Dispersión</strong></td>
+<td>Qué tan variables son los datos</td>
+<td>Variación en peso entre machos y hembras</td>
+</tr>
+<tr class="odd">
+<td><strong>Forma de distribución</strong></td>
+<td>Cómo se distribuyen los datos</td>
+<td>Si las tallas de una especie son simétricas o sesgadas</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="exploración-de-datos-en-r" class="level3">
+<h3 data-anchor-id="exploración-de-datos-en-r">Exploración de datos en R</h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Cargar los datos de ejemplo</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">Localidad =</span> <span class="fu">rep</span>(<span class="fu">c</span>(<span class="st">"Popayán"</span>, <span class="st">"Pasto"</span>), <span class="at">each =</span> <span class="dv">10</span>),</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">Longitud =</span> <span class="fu">c</span>(<span class="fu">rnorm</span>(<span class="dv">10</span>, <span class="at">mean =</span> <span class="fl">4.5</span>, <span class="at">sd =</span> <span class="fl">0.3</span>), <span class="fu">rnorm</span>(<span class="dv">10</span>, <span class="at">mean =</span> <span class="fl">5.1</span>, <span class="at">sd =</span> <span class="fl">0.4</span>))</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Inspección general</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>  Localidad Longitud
+1   Popayán 4.302313
+2   Popayán 4.227707
+3   Popayán 4.504453
+4   Popayán 4.437189
+5   Popayán 4.194271
+6   Popayán 4.876285</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>  Localidad            Longitud    
+ Length:20          Min.   :4.033  
+ Class :character   1st Qu.:4.403  
+ Mode  :character   Median :4.837  
+                    Mean   :4.819  
+                    3rd Qu.:5.098  
+                    Max.   :5.719  </code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>'data.frame':   20 obs. of  2 variables:
+ $ Localidad: chr  "Popayán" "Popayán" "Popayán" "Popayán" ...
+ $ Longitud : num  4.3 4.23 4.5 4.44 4.19 ...</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Estadísticas básicas</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(data<span class="sc">$</span>Longitud)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 4.819333</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sd</span>(data<span class="sc">$</span>Longitud)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 0.5287906</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">var</span>(data<span class="sc">$</span>Longitud)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 0.2796195</code></pre>
+</div>
+</div>
+</section>
+<section id="medidas-de-tendencia-central" class="level3">
+<h3 data-anchor-id="medidas-de-tendencia-central">Medidas de tendencia central</h3>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Medida</th>
+<th>Función en R</th>
+<th>Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Media</strong></td>
+<td><code>mean(x)</code></td>
+<td>Promedio aritmético</td>
+</tr>
+<tr class="even">
+<td><strong>Mediana</strong></td>
+<td><code>median(x)</code></td>
+<td>Valor central de los datos ordenados</td>
+</tr>
+<tr class="odd">
+<td><strong>Moda</strong></td>
+<td><code>sort(table(x), decreasing = TRUE)[1]</code></td>
+<td>Valor más frecuente</td>
+</tr>
+</tbody>
+</table>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(data<span class="sc">$</span>Longitud)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 4.819333</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">median</span>(data<span class="sc">$</span>Longitud)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 4.837064</code></pre>
+</div>
+</div>
+<section id="ejemplo-práctico-no.-1" class="level5">
+<h5 data-anchor-id="ejemplo-práctico-no.-1">Ejemplo práctico No.&nbsp;1</h5>
+<p>Si las longitudes de las hojas son 4.1, 4.4, 4.6, 5.1 y 5.2.</p>
+<p>Calcule cuáles serán las medias y medianas.</p>
 
 
+</section>
+</section>
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

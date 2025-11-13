@@ -4,8 +4,81 @@ subtitle: "Capítulo 2"
 format:
   html:
     toc: true
+    toc-location: left
+    toc-expand: true
     css: style.css
 margin-header: |
-  ![Xavier Clemente García Cevallos](multimedia/album1.png)
+  <div style="text-align: center;">
+    <a href="https://xavierclementegarcia.github.io/BIODEN/material_educativo/curso_r.html" target="_blank">
+      <img src="multimedia/album1.png" alt="Xavier Clemente García Cevallos" width="200">
+    </a>
+    <p style="font-size: 0.8em; color: gray; margin-top: 5px;">
+      Xavier Clemente García Cevallos
+    </p>
+  </div>
 ---
 
+## Estadística descriptiva y pruebas básicas en R
+
+#### Objetivos
+
+-   Comprender los fundamentos de la **estadística descriptiva** aplicada a datos biológicos.\
+-   Calcular y visualizar medidas de tendencia central y dispersión.\
+-   Realizar pruebas estadísticas básicas (t de Student, ANOVA, Chi-cuadrado, correlación).\
+-   Interpretar los resultados en el contexto biológico.
+
+#### Tip relámpago
+
+-   ¿Qué son variables y tipos de datos?
+
+-   ¿Cómo crear y manipular dataframes en R?
+
+### Conceptos básicos
+
+La **estadística descriptiva** resume y organiza la información contenida en los datos.\
+En biología, nos permite **caracterizar poblaciones**, **comparar tratamientos** o **detectar patrones ecológicos**.
+
+| Tipo de medida | Qué indica | Ejemplo biológico |
+|----|----|----|
+| **Tendencia central** | Valor típico o promedio | Longitud promedio de hojas |
+| **Dispersión** | Qué tan variables son los datos | Variación en peso entre machos y hembras |
+| **Forma de distribución** | Cómo se distribuyen los datos | Si las tallas de una especie son simétricas o sesgadas |
+
+### Exploración de datos en R
+
+```{r}
+# Cargar los datos de ejemplo
+data <- data.frame(
+  Localidad = rep(c("Popayán", "Pasto"), each = 10),
+  Longitud = c(rnorm(10, mean = 4.5, sd = 0.3), rnorm(10, mean = 5.1, sd = 0.4))
+)
+
+# Inspección general
+head(data)
+summary(data)
+str(data)
+
+# Estadísticas básicas
+mean(data$Longitud)
+sd(data$Longitud)
+var(data$Longitud)
+```
+
+### Medidas de tendencia central
+
+| Medida | Función en R | Descripción |
+|----|----|----|
+| **Media** | `mean(x)` | Promedio aritmético |
+| **Mediana** | `median(x)` | Valor central de los datos ordenados |
+| **Moda** | `sort(table(x), decreasing = TRUE)[1]` | Valor más frecuente |
+
+```{r}
+mean(data$Longitud)
+median(data$Longitud)
+```
+
+##### Ejemplo práctico No. 1
+
+Si las longitudes de las hojas son 4.1, 4.4, 4.6, 5.1 y 5.2.
+
+Calcule cuáles serán las medias y medianas.
