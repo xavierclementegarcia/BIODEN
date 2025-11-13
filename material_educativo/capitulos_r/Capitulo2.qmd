@@ -39,10 +39,19 @@ La **estadística descriptiva** resume y organiza la información contenida en l
 En biología, nos permite **caracterizar poblaciones**, **comparar tratamientos** o **detectar patrones ecológicos**.
 
 | Tipo de medida | Qué indica | Ejemplo biológico |
-|----|----|----|
+|------------------------|------------------------|------------------------|
 | **Tendencia central** | Valor típico o promedio | Longitud promedio de hojas |
 | **Dispersión** | Qué tan variables son los datos | Variación en peso entre machos y hembras |
 | **Forma de distribución** | Cómo se distribuyen los datos | Si las tallas de una especie son simétricas o sesgadas |
+
+En biología una de las orientaciones que ustedpodría considerar son por ejemplo:
+
+| Escala | Ejemplo | Tipo de análisis |
+|------------------|--------------------|----------------------------------|
+| **Molecular** | Expresión diferencial de genes | Estadística inferencial (t-test, ANOVA) |
+| **Organismo** | Morfometría (longitud, peso, área foliar) | Descriptiva y comparativa |
+| **Poblacional** | Estructura de edad o sexo | Frecuencias, Chi-cuadrado |
+| **Ecológica** | Diversidad de especies o abundancias | Índices, ANOVA, correlaciones |
 
 ### Exploración de datos en R
 
@@ -67,7 +76,7 @@ var(data$Longitud)
 ### Medidas de tendencia central
 
 | Medida | Función en R | Descripción |
-|----|----|----|
+|------------------------|------------------------|------------------------|
 | **Media** | `mean(x)` | Promedio aritmético |
 | **Mediana** | `median(x)` | Valor central de los datos ordenados |
 | **Moda** | `sort(table(x), decreasing = TRUE)[1]` | Valor más frecuente |
@@ -82,3 +91,244 @@ median(data$Longitud)
 Si las longitudes de las hojas son 4.1, 4.4, 4.6, 5.1 y 5.2.
 
 Calcule cuáles serán las medias y medianas.
+
+### Medidas de dispersión
+
+| Medida | Función en R | Qué representa |
+|------------------------|-------------------|-----------------------------|
+| **Rango** | `range(x)` | Diferencia entre máximo y mínimo |
+| **Varianza** | `var(x)` | Promedio de las desviaciones cuadradas |
+| **Desviación estándar** | `sd(x)` | Variabilidad respecto al promedio |
+| **Error estándar de la media** | `sd(x)/sqrt(length(x))` | Precisión del promedio estimado |
+
+Ahora uste podrá a partir de los datos que ya hemos trabajado usar las funciones que hemos colocado en la tabla anterior. Entonces, por ejemplo podría considerar lo siguiente:
+
+```{r}
+range(data$Longitud)
+sd(data$Longitud)
+
+```
+
+¿Qué observa y qué puede analizar teniendo en cuenta los datos pasados?. En biología por ejemplo, la desviación estándar es esencial para comparar poblaciones de diferentes puntos, nichos o localidades.
+
+### Pruebas estadísticas y supuestos de normalidad 
+
+#### 1. Introducción general
+
+En biología, los datos rara vez son solo números: representan procesos biológicos, ecológicos o fisiológicos.  
+Desde el crecimiento de una planta bajo distintos tratamientos, hasta la diversidad de especies en diferentes hábitats, todos los estudios comparten un punto de partida común: **describir, resumir y entender la variabilidad** en los datos.
+
+La **estadística descriptiva** busca caracterizar los datos —su tendencia central, dispersión, forma y posibles valores atípicos— antes de aplicar cualquier modelo o prueba inferencial.  
+Pero para avanzar hacia inferencias válidas (como comparar grupos o correlacionar variables), debemos verificar **supuestos fundamentales**, especialmente la **normalidad** y la **homogeneidad de varianzas**.
+
+---
+
+#### 2. Tipos de variables biológicas
+
+Antes de aplicar una prueba, debemos identificar el tipo de variable con la que trabajamos:
+
+| Tipo de variable | Ejemplo biológico | Tipo de análisis |
+|------------------|-------------------|------------------|
+| **Cuantitativa continua** | Longitud de una hoja, peso de un pez, concentración de clorofila | Media, varianza, ANOVA, regresión |
+| **Cuantitativa discreta** | Número de individuos, semillas germinadas | Conteos, Poisson, Chi-cuadrado |
+| **Categórica (nominal)** | Sexo (macho/hembra), hábitat (bosque/páramo) | Tablas de contingencia, proporciones |
+| **Ordinal** | Grado de severidad, nivel de floración | Pruebas no paramétricas (Kruskal–Wallis) |
+
+---
+
+#### 3. Pruebas paramétricas vs. no paramétricas
+
+| Característica | Pruebas paramétricas | Pruebas no paramétricas |
+|----------------|----------------------|--------------------------|
+| Supuesto principal | Normalidad de los datos | No requieren normalidad |
+| Tipo de variable | Continua | Ordinal o no normal |
+| Ejemplo | *t*-test, ANOVA, regresión lineal | Mann–Whitney, Kruskal–Wallis, Spearman |
+| Ventajas | Mayor poder estadístico | Más robustas ante datos sesgados |
+| Limitaciones | Sensibles a outliers y asimetrías | Menos potencia, resultados menos específicos |
+
+---
+
+#### 4. Supuesto de normalidad
+
+La **normalidad** implica que los datos se distribuyen de manera simétrica alrededor de la media.  
+Matemáticamente, la **distribución normal** (o gaussiana) tiene la forma:
+
+$$
+f(x) = \frac{1}{\sigma \sqrt{2\pi}} e^{-\frac{1}{2}\left(\frac{x-\mu}{\sigma}\right)^2}
+$$
+
+ 
+En biología, muchas variables **aproximan una distribución normal** debido al efecto acumulativo de múltiples factores (por ejemplo, tamaño corporal, masa, tasa de crecimiento).
+
+---
+
+#### 5. Cómo verificar la normalidad
+
+##### 5.1. Métodos gráficos
+
+Los gráficos son la primera herramienta para evaluar visualmente si los datos se comportan como una normal:
+
+- **Histogramas:** deben mostrar una forma de campana.  
+- **Gráfico QQ (Quantile–Quantile):** los puntos deben seguir aproximadamente una línea recta.  
+- **Boxplots:** ayudan a detectar asimetrías y valores atípicos.
+
+```{r}
+# Ejemplo en R
+set.seed(123)
+datos <- rnorm(30, mean = 10, sd = 2)
+
+hist(datos, main = "Distribución aproximada normal", col = "lightgreen", border = "white")
+qqnorm(datos); qqline(datos, col = "red", lwd = 2)
+boxplot(datos, main = "Boxplot de ejemplo", col = "lightblue")
+```
+
+Y ahora estas son algunas de las pruebas de hipótesis más utilizadas. 
+
+| Prueba                            | Hipótesis nula \(H_0\)                            | Interpretación                            | Uso recomendado         |
+| --------------------------------- | ------------------------------------------------- | ----------------------------------------- | ----------------------- |
+| **Shapiro–Wilk**                  | Los datos siguen una distribución normal          | Si p > 0.05 → normalidad aceptada         | Muestras pequeñas (<50) |
+| **Kolmogorov–Smirnov**            | Similar a Shapiro, compara con una normal teórica | Menos sensible en muestras pequeñas       | Muestras grandes (>50)  |
+| **Anderson–Darling / Lilliefors** | Alternativas más potentes para colas asimétricas  | Mejor para datos ambientales o ecológicos | Distribuciones sesgadas |
+
+
+En base al ejemplo anterior, ahora puede calcular la normalidad. ¿Qué nos indican estos datos?   
+```{r}
+shapiro.test(datos)
+```
+Si <p > 0.05> : no se rechaza la normalidad.
+Si <p ≤ 0.05> : los datos difieren significativamente de una normal → considerar transformaciones o pruebas no paramétricas.
+
+#### 6. Homogeneidad de varianzas (Homoscedasticidad)
+
+Además de la normalidad, muchas pruebas requieren que los grupos comparados tengan varianzas similares.
+Esto garantiza que las diferencias observadas se deban al tratamiento y no a la dispersión desigual de los datos.
+
+| Prueba       | Hipótesis nula \(H_0\)    | Cuándo usar                    |
+| ------------ | ------------------------- | ------------------------------ |
+| **Levene**   | Las varianzas son iguales | Más robusta, datos no normales |
+| **Bartlett** | Las varianzas son iguales | Solo para datos normales       |
+
+```{r}
+grupo1 <- rnorm(20, 10, 2)
+grupo2 <- rnorm(20, 11, 2.5)
+grupo3 <- rnorm(20, 9, 1.8)
+
+library(car)
+leveneTest(c(grupo1, grupo2, grupo3),
+group = factor(rep(1:3, each = 20)))
+```
+
+#### 7. Transformaciones de datos 
+
+Cuando los datos no cumplen normalidad, se pueden aplicar transformaciones para estabilizar la varianza:
+
+| Tipo de dato                 | Transformación sugerida           |
+| ---------------------------- | --------------------------------- |
+| Conteos                      | \(\sqrt{x + 0.5}\)                |
+| Proporciones o tasas         | \(\arcsin(\sqrt{x})\)             |
+| Datos sesgados               | \(\log_{10}(x+1)\) o \(\ln(x+1)\) |
+| Distribuciones exponenciales | \(1/x\) o Box–Cox                 |
+
+Estas transformaciones son comunes en ecología, botánica y fisiología vegetal, donde muchas variables (biomasa, abundancia, tasa de fotosíntesis) presentan sesgo.
+
+```{r}
+#Ejemplo de transformación logarítmica
+
+sesgados <- rexp(30, rate = 0.2)
+hist(log10(sesgados + 1), main = "Transformación log10(x+1)", col = "lightcoral", border = "white")
+```
+
+#### 8. Conclusiones teóricas
+
+Antes de aplicar una prueba estadística, el biólogo debe responder tres preguntas clave:
+
+¿Mis datos son normales?
+
+¿Las varianzas entre grupos son homogéneas?
+
+¿El tipo de variable y tamaño de muestra justifican un modelo paramétrico o no paramétrico?
+
+## Casos de estudio
+
+#### Morfometría en aves
+
+Considere el siguiente ejemplo, para ello usaremos el paquete [palmerpenguins](https://allisonhorst-github-io.translate.goog/palmerpenguins/?_x_tr_sl=en&_x_tr_tl=es&_x_tr_hl=es&_x_tr_pto=tc), el cual profundizaremos en otra ocasión. Suponga que es un biologo y se ha ido al antártico ha realizar estudios morfométricos de pinguinos y obtuvo los siguientes datos
+
+```{r}
+library(palmerpenguins)
+library(dplyr)
+
+# Inspeccionamos los datos
+head(penguins)
+glimpse(penguins)
+
+# Limpieza inicial
+penguins <- na.omit(penguins)
+```
+
+Inicialmente es posible que esta base de datos tenga datos atípicos o vacíos, esto en la realidad podríamos atribuirlo a datos que no se tomaron, esfuerzo de muestreo o simplemente un paso previo a la normalización de sus datos.
+
+Posteriormente, usted podrá poceder a evaluar los datos de la siguiente manera.
+
+```{r}
+penguins %>%
+  group_by(species) %>%
+  summarise(
+    mean_bill = mean(bill_length_mm),
+    sd_bill = sd(bill_length_mm),
+    n = n()
+  )
+```
+
+¿Cuál es la interpretación biológica probable?
+
+Los pingüinos *Gentoo* tienen un pico más largo en promedio que *Adelie* y *Chinstrap*, reflejando adaptaciones tróficas distintas.
+
+##### Comparación de especies (ANOVA) 
+
+Esto es algo que ya hemos visto en detalle previamente. Quizás deba preguntarse porque ANOVA es la mejor opción.
+
+```{r}
+anova_penguins <- aov(bill_length_mm ~ species, data = penguins)
+summary(anova_penguins)
+TukeyHSD(anova_penguins)
+```
+
+Si `p < 0.05`, las medias difieren significativamente, lo que indica una diferenciación morfológica interespecífica.
+
+
+#### Índice y comparaciones con el paquete vegan
+El paquete vegan es ampliamente usado en ecología y conservación para analizar riqueza, diversidad y similitud.
+
+```{r}
+library(vegan)
+
+# Ejemplo: matriz de abundancia ficticia
+abund <- data.frame(
+  especie_A = c(5, 2, 0, 1),
+  especie_B = c(0, 3, 5, 2),
+  especie_C = c(3, 1, 0, 4)
+)
+rownames(abund) <- c("Sitio1", "Sitio2", "Sitio3", "Sitio4")
+
+# Índices de diversidad
+diversidad <- diversity(abund, index = "shannon")
+diversidad
+```
+
+Shannon (H') mide la incertidumbre en la identidad de una especie tomada al azar.
+Cuanto mayor sea H’, mayor la diversidad.
+
+```{r}
+# Riqueza específica
+specnumber(abund)
+
+```
+
+```{r}
+barplot(diversidad, main = "Diversidad de Shannon por sitio", col = "lightgreen", ylab = "H'")
+
+```
+
+En biología de la conservación, esto puede indicar qué sitios son prioritarios para manejo o restauración.
+

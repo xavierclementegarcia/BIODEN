@@ -127,6 +127,35 @@ cookieconsent.run({
 </script> 
   
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <link rel="stylesheet" href="../../styles.css">
 <link rel="stylesheet" href="style.css">
@@ -388,7 +417,10 @@ cookieconsent.run({
   <li><a href="#conceptos-básicos" id="toc-conceptos-básicos" class="nav-link" data-scroll-target="#conceptos-básicos">Conceptos básicos</a></li>
   <li><a href="#exploración-de-datos-en-r" id="toc-exploración-de-datos-en-r" class="nav-link" data-scroll-target="#exploración-de-datos-en-r">Exploración de datos en R</a></li>
   <li><a href="#medidas-de-tendencia-central" id="toc-medidas-de-tendencia-central" class="nav-link" data-scroll-target="#medidas-de-tendencia-central">Medidas de tendencia central</a></li>
+  <li><a href="#medidas-de-dispersión" id="toc-medidas-de-dispersión" class="nav-link" data-scroll-target="#medidas-de-dispersión">Medidas de dispersión</a></li>
+  <li><a href="#pruebas-estadísticas-y-supuestos-de-normalidad" id="toc-pruebas-estadísticas-y-supuestos-de-normalidad" class="nav-link" data-scroll-target="#pruebas-estadísticas-y-supuestos-de-normalidad">Pruebas estadísticas y supuestos de normalidad</a></li>
   </ul></li>
+  <li><a href="#casos-de-estudio" id="toc-casos-de-estudio" class="nav-link" data-scroll-target="#casos-de-estudio">Casos de estudio</a></li>
   </ul>
 </nav>
 </nav>
@@ -483,6 +515,43 @@ En biología, nos permite <strong>caracterizar poblaciones</strong>, <strong>com
 </tr>
 </tbody>
 </table>
+<p>En biología una de las orientaciones que ustedpodría considerar son por ejemplo:</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 25%">
+<col style="width: 27%">
+<col style="width: 47%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Escala</th>
+<th>Ejemplo</th>
+<th>Tipo de análisis</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Molecular</strong></td>
+<td>Expresión diferencial de genes</td>
+<td>Estadística inferencial (t-test, ANOVA)</td>
+</tr>
+<tr class="even">
+<td><strong>Organismo</strong></td>
+<td>Morfometría (longitud, peso, área foliar)</td>
+<td>Descriptiva y comparativa</td>
+</tr>
+<tr class="odd">
+<td><strong>Poblacional</strong></td>
+<td>Estructura de edad o sexo</td>
+<td>Frecuencias, Chi-cuadrado</td>
+</tr>
+<tr class="even">
+<td><strong>Ecológica</strong></td>
+<td>Diversidad de especies o abundancias</td>
+<td>Índices, ANOVA, correlaciones</td>
+</tr>
+</tbody>
+</table>
 </section>
 <section id="exploración-de-datos-en-r" class="level3">
 <h3 data-anchor-id="exploración-de-datos-en-r">Exploración de datos en R</h3>
@@ -497,41 +566,41 @@ En biología, nos permite <strong>caracterizar poblaciones</strong>, <strong>com
 <span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>  Localidad Longitud
-1   Popayán 4.302313
-2   Popayán 4.227707
-3   Popayán 4.504453
-4   Popayán 4.437189
-5   Popayán 4.194271
-6   Popayán 4.876285</code></pre>
+1   Popayán 4.432496
+2   Popayán 3.959103
+3   Popayán 4.588619
+4   Popayán 4.770254
+5   Popayán 4.820079
+6   Popayán 4.129355</code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>  Localidad            Longitud    
- Length:20          Min.   :4.033  
- Class :character   1st Qu.:4.403  
- Mode  :character   Median :4.837  
-                    Mean   :4.819  
-                    3rd Qu.:5.098  
-                    Max.   :5.719  </code></pre>
+ Length:20          Min.   :3.959  
+ Class :character   1st Qu.:4.550  
+ Mode  :character   Median :4.797  
+                    Mean   :4.779  
+                    3rd Qu.:5.068  
+                    Max.   :5.654  </code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>'data.frame':   20 obs. of  2 variables:
  $ Localidad: chr  "Popayán" "Popayán" "Popayán" "Popayán" ...
- $ Longitud : num  4.3 4.23 4.5 4.44 4.19 ...</code></pre>
+ $ Longitud : num  4.43 3.96 4.59 4.77 4.82 ...</code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Estadísticas básicas</span></span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(data<span class="sc">$</span>Longitud)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 4.819333</code></pre>
+<pre><code>[1] 4.779087</code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sd</span>(data<span class="sc">$</span>Longitud)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 0.5287906</code></pre>
+<pre><code>[1] 0.4040145</code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">var</span>(data<span class="sc">$</span>Longitud)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 0.2796195</code></pre>
+<pre><code>[1] 0.1632277</code></pre>
 </div>
 </div>
 </section>
@@ -571,20 +640,541 @@ En biología, nos permite <strong>caracterizar poblaciones</strong>, <strong>com
 <div class="cell">
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(data<span class="sc">$</span>Longitud)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 4.819333</code></pre>
+<pre><code>[1] 4.779087</code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">median</span>(data<span class="sc">$</span>Longitud)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 4.837064</code></pre>
+<pre><code>[1] 4.797388</code></pre>
 </div>
 </div>
 <section id="ejemplo-práctico-no.-1" class="level5">
 <h5 data-anchor-id="ejemplo-práctico-no.-1">Ejemplo práctico No.&nbsp;1</h5>
 <p>Si las longitudes de las hojas son 4.1, 4.4, 4.6, 5.1 y 5.2.</p>
 <p>Calcule cuáles serán las medias y medianas.</p>
-
-
 </section>
+</section>
+<section id="medidas-de-dispersión" class="level3">
+<h3 data-anchor-id="medidas-de-dispersión">Medidas de dispersión</h3>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 26%">
+<col style="width: 40%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Medida</th>
+<th>Función en R</th>
+<th>Qué representa</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Rango</strong></td>
+<td><code>range(x)</code></td>
+<td>Diferencia entre máximo y mínimo</td>
+</tr>
+<tr class="even">
+<td><strong>Varianza</strong></td>
+<td><code>var(x)</code></td>
+<td>Promedio de las desviaciones cuadradas</td>
+</tr>
+<tr class="odd">
+<td><strong>Desviación estándar</strong></td>
+<td><code>sd(x)</code></td>
+<td>Variabilidad respecto al promedio</td>
+</tr>
+<tr class="even">
+<td><strong>Error estándar de la media</strong></td>
+<td><code>sd(x)/sqrt(length(x))</code></td>
+<td>Precisión del promedio estimado</td>
+</tr>
+</tbody>
+</table>
+<p>Ahora uste podrá a partir de los datos que ya hemos trabajado usar las funciones que hemos colocado en la tabla anterior. Entonces, por ejemplo podría considerar lo siguiente:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="fu">range</span>(data<span class="sc">$</span>Longitud)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 3.959103 5.653520</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sd</span>(data<span class="sc">$</span>Longitud)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 0.4040145</code></pre>
+</div>
+</div>
+<p>¿Qué observa y qué puede analizar teniendo en cuenta los datos pasados?. En biología por ejemplo, la desviación estándar es esencial para comparar poblaciones de diferentes puntos, nichos o localidades.</p>
+</section>
+<section id="pruebas-estadísticas-y-supuestos-de-normalidad" class="level3">
+<h3 data-anchor-id="pruebas-estadísticas-y-supuestos-de-normalidad">Pruebas estadísticas y supuestos de normalidad</h3>
+<section id="introducción-general" class="level4">
+<h4 data-anchor-id="introducción-general">1. Introducción general</h4>
+<p>En biología, los datos rara vez son solo números: representan procesos biológicos, ecológicos o fisiológicos.<br>
+Desde el crecimiento de una planta bajo distintos tratamientos, hasta la diversidad de especies en diferentes hábitats, todos los estudios comparten un punto de partida común: <strong>describir, resumir y entender la variabilidad</strong> en los datos.</p>
+<p>La <strong>estadística descriptiva</strong> busca caracterizar los datos —su tendencia central, dispersión, forma y posibles valores atípicos— antes de aplicar cualquier modelo o prueba inferencial.<br>
+Pero para avanzar hacia inferencias válidas (como comparar grupos o correlacionar variables), debemos verificar <strong>supuestos fundamentales</strong>, especialmente la <strong>normalidad</strong> y la <strong>homogeneidad de varianzas</strong>.</p>
+<hr>
+</section>
+<section id="tipos-de-variables-biológicas" class="level4">
+<h4 data-anchor-id="tipos-de-variables-biológicas">2. Tipos de variables biológicas</h4>
+<p>Antes de aplicar una prueba, debemos identificar el tipo de variable con la que trabajamos:</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 32%">
+<col style="width: 34%">
+<col style="width: 32%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Tipo de variable</th>
+<th>Ejemplo biológico</th>
+<th>Tipo de análisis</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Cuantitativa continua</strong></td>
+<td>Longitud de una hoja, peso de un pez, concentración de clorofila</td>
+<td>Media, varianza, ANOVA, regresión</td>
+</tr>
+<tr class="even">
+<td><strong>Cuantitativa discreta</strong></td>
+<td>Número de individuos, semillas germinadas</td>
+<td>Conteos, Poisson, Chi-cuadrado</td>
+</tr>
+<tr class="odd">
+<td><strong>Categórica (nominal)</strong></td>
+<td>Sexo (macho/hembra), hábitat (bosque/páramo)</td>
+<td>Tablas de contingencia, proporciones</td>
+</tr>
+<tr class="even">
+<td><strong>Ordinal</strong></td>
+<td>Grado de severidad, nivel de floración</td>
+<td>Pruebas no paramétricas (Kruskal–Wallis)</td>
+</tr>
+</tbody>
+</table>
+<hr>
+</section>
+<section id="pruebas-paramétricas-vs.-no-paramétricas" class="level4">
+<h4 data-anchor-id="pruebas-paramétricas-vs.-no-paramétricas">3. Pruebas paramétricas vs.&nbsp;no paramétricas</h4>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 25%">
+<col style="width: 34%">
+<col style="width: 40%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Característica</th>
+<th>Pruebas paramétricas</th>
+<th>Pruebas no paramétricas</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Supuesto principal</td>
+<td>Normalidad de los datos</td>
+<td>No requieren normalidad</td>
+</tr>
+<tr class="even">
+<td>Tipo de variable</td>
+<td>Continua</td>
+<td>Ordinal o no normal</td>
+</tr>
+<tr class="odd">
+<td>Ejemplo</td>
+<td><em>t</em>-test, ANOVA, regresión lineal</td>
+<td>Mann–Whitney, Kruskal–Wallis, Spearman</td>
+</tr>
+<tr class="even">
+<td>Ventajas</td>
+<td>Mayor poder estadístico</td>
+<td>Más robustas ante datos sesgados</td>
+</tr>
+<tr class="odd">
+<td>Limitaciones</td>
+<td>Sensibles a outliers y asimetrías</td>
+<td>Menos potencia, resultados menos específicos</td>
+</tr>
+</tbody>
+</table>
+<hr>
+</section>
+<section id="supuesto-de-normalidad" class="level4">
+<h4 data-anchor-id="supuesto-de-normalidad">4. Supuesto de normalidad</h4>
+<p>La <strong>normalidad</strong> implica que los datos se distribuyen de manera simétrica alrededor de la media.<br>
+Matemáticamente, la <strong>distribución normal</strong> (o gaussiana) tiene la forma:</p>
+<p><span class="math display">\[
+f(x) = \frac{1}{\sigma \sqrt{2\pi}} e^{-\frac{1}{2}\left(\frac{x-\mu}{\sigma}\right)^2}
+\]</span></p>
+<p>En biología, muchas variables <strong>aproximan una distribución normal</strong> debido al efecto acumulativo de múltiples factores (por ejemplo, tamaño corporal, masa, tasa de crecimiento).</p>
+<hr>
+</section>
+<section id="cómo-verificar-la-normalidad" class="level4">
+<h4 data-anchor-id="cómo-verificar-la-normalidad">5. Cómo verificar la normalidad</h4>
+<section id="métodos-gráficos" class="level5">
+<h5 data-anchor-id="métodos-gráficos">5.1. Métodos gráficos</h5>
+<p>Los gráficos son la primera herramienta para evaluar visualmente si los datos se comportan como una normal:</p>
+<ul>
+<li><strong>Histogramas:</strong> deben mostrar una forma de campana.<br>
+</li>
+<li><strong>Gráfico QQ (Quantile–Quantile):</strong> los puntos deben seguir aproximadamente una línea recta.<br>
+</li>
+<li><strong>Boxplots:</strong> ayudan a detectar asimetrías y valores atípicos.</li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Ejemplo en R</span></span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">123</span>)</span>
+<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>datos <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="dv">30</span>, <span class="at">mean =</span> <span class="dv">10</span>, <span class="at">sd =</span> <span class="dv">2</span>)</span>
+<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-5"><a href="#cb21-5" aria-hidden="true" tabindex="-1"></a><span class="fu">hist</span>(datos, <span class="at">main =</span> <span class="st">"Distribución aproximada normal"</span>, <span class="at">col =</span> <span class="st">"lightgreen"</span>, <span class="at">border =</span> <span class="st">"white"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="Capitulo2_files/figure-html/unnamed-chunk-4-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="fu">qqnorm</span>(datos); <span class="fu">qqline</span>(datos, <span class="at">col =</span> <span class="st">"red"</span>, <span class="at">lwd =</span> <span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="Capitulo2_files/figure-html/unnamed-chunk-4-2.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="fu">boxplot</span>(datos, <span class="at">main =</span> <span class="st">"Boxplot de ejemplo"</span>, <span class="at">col =</span> <span class="st">"lightblue"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="Capitulo2_files/figure-html/unnamed-chunk-4-3.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Y ahora estas son algunas de las pruebas de hipótesis más utilizadas.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 22%">
+<col style="width: 33%">
+<col style="width: 28%">
+<col style="width: 15%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Prueba</th>
+<th>Hipótesis nula (H_0)</th>
+<th>Interpretación</th>
+<th>Uso recomendado</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Shapiro–Wilk</strong></td>
+<td>Los datos siguen una distribución normal</td>
+<td>Si p &gt; 0.05 → normalidad aceptada</td>
+<td>Muestras pequeñas (&lt;50)</td>
+</tr>
+<tr class="even">
+<td><strong>Kolmogorov–Smirnov</strong></td>
+<td>Similar a Shapiro, compara con una normal teórica</td>
+<td>Menos sensible en muestras pequeñas</td>
+<td>Muestras grandes (&gt;50)</td>
+</tr>
+<tr class="odd">
+<td><strong>Anderson–Darling / Lilliefors</strong></td>
+<td>Alternativas más potentes para colas asimétricas</td>
+<td>Mejor para datos ambientales o ecológicos</td>
+<td>Distribuciones sesgadas</td>
+</tr>
+</tbody>
+</table>
+<p>En base al ejemplo anterior, ahora puede calcular la normalidad. ¿Qué nos indican estos datos?</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="fu">shapiro.test</span>(datos)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+    Shapiro-Wilk normality test
+
+data:  datos
+W = 0.97894, p-value = 0.7966</code></pre>
+</div>
+</div>
+Si
+<p>
+</p><p>0.05&gt; : no se rechaza la normalidad. Si &lt;p ≤ 0.05&gt; : los datos difieren significativamente de una normal → considerar transformaciones o pruebas no paramétricas.</p>
+</section>
+</section>
+<section id="homogeneidad-de-varianzas-homoscedasticidad" class="level4">
+<h4 data-anchor-id="homogeneidad-de-varianzas-homoscedasticidad">6. Homogeneidad de varianzas (Homoscedasticidad)</h4>
+<p>Además de la normalidad, muchas pruebas requieren que los grupos comparados tengan varianzas similares. Esto garantiza que las diferencias observadas se deban al tratamiento y no a la dispersión desigual de los datos.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 17%">
+<col style="width: 37%">
+<col style="width: 44%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Prueba</th>
+<th>Hipótesis nula (H_0)</th>
+<th>Cuándo usar</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Levene</strong></td>
+<td>Las varianzas son iguales</td>
+<td>Más robusta, datos no normales</td>
+</tr>
+<tr class="even">
+<td><strong>Bartlett</strong></td>
+<td>Las varianzas son iguales</td>
+<td>Solo para datos normales</td>
+</tr>
+</tbody>
+</table>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>grupo1 <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="dv">20</span>, <span class="dv">10</span>, <span class="dv">2</span>)</span>
+<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a>grupo2 <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="dv">20</span>, <span class="dv">11</span>, <span class="fl">2.5</span>)</span>
+<span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a>grupo3 <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="dv">20</span>, <span class="dv">9</span>, <span class="fl">1.8</span>)</span>
+<span id="cb26-4"><a href="#cb26-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-5"><a href="#cb26-5" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(car)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Loading required package: carData</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="fu">leveneTest</span>(<span class="fu">c</span>(grupo1, grupo2, grupo3),</span>
+<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a><span class="at">group =</span> <span class="fu">factor</span>(<span class="fu">rep</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>, <span class="at">each =</span> <span class="dv">20</span>)))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Levene's Test for Homogeneity of Variance (center = median)
+      Df F value Pr(&gt;F)
+group  2  0.5917 0.5568
+      57               </code></pre>
+</div>
+</div>
+</section>
+<section id="transformaciones-de-datos" class="level4">
+<h4 data-anchor-id="transformaciones-de-datos">7. Transformaciones de datos</h4>
+<p>Cuando los datos no cumplen normalidad, se pueden aplicar transformaciones para estabilizar la varianza:</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Tipo de dato</th>
+<th>Transformación sugerida</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Conteos</td>
+<td>()</td>
+</tr>
+<tr class="even">
+<td>Proporciones o tasas</td>
+<td>(())</td>
+</tr>
+<tr class="odd">
+<td>Datos sesgados</td>
+<td>(_{10}(x+1)) o ((x+1))</td>
+</tr>
+<tr class="even">
+<td>Distribuciones exponenciales</td>
+<td>(1/x) o Box–Cox</td>
+</tr>
+</tbody>
+</table>
+<p>Estas transformaciones son comunes en ecología, botánica y fisiología vegetal, donde muchas variables (biomasa, abundancia, tasa de fotosíntesis) presentan sesgo.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Ejemplo de transformación logarítmica</span></span>
+<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-3"><a href="#cb30-3" aria-hidden="true" tabindex="-1"></a>sesgados <span class="ot">&lt;-</span> <span class="fu">rexp</span>(<span class="dv">30</span>, <span class="at">rate =</span> <span class="fl">0.2</span>)</span>
+<span id="cb30-4"><a href="#cb30-4" aria-hidden="true" tabindex="-1"></a><span class="fu">hist</span>(<span class="fu">log10</span>(sesgados <span class="sc">+</span> <span class="dv">1</span>), <span class="at">main =</span> <span class="st">"Transformación log10(x+1)"</span>, <span class="at">col =</span> <span class="st">"lightcoral"</span>, <span class="at">border =</span> <span class="st">"white"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="Capitulo2_files/figure-html/unnamed-chunk-7-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="conclusiones-teóricas" class="level4">
+<h4 data-anchor-id="conclusiones-teóricas">8. Conclusiones teóricas</h4>
+<p>Antes de aplicar una prueba estadística, el biólogo debe responder tres preguntas clave:</p>
+<p>¿Mis datos son normales?</p>
+<p>¿Las varianzas entre grupos son homogéneas?</p>
+<p>¿El tipo de variable y tamaño de muestra justifican un modelo paramétrico o no paramétrico?</p>
+</section>
+</section>
+</section>
+<section id="casos-de-estudio" class="level2">
+<h2 data-anchor-id="casos-de-estudio">Casos de estudio</h2>
+<section id="morfometría-en-aves" class="level4">
+<h4 data-anchor-id="morfometría-en-aves">Morfometría en aves</h4>
+<p>Considere el siguiente ejemplo, para ello usaremos el paquete <a href="https://allisonhorst-github-io.translate.goog/palmerpenguins/?_x_tr_sl=en&amp;_x_tr_tl=es&amp;_x_tr_hl=es&amp;_x_tr_pto=tc">palmerpenguins</a>, el cual profundizaremos en otra ocasión. Suponga que es un biologo y se ha ido al antártico ha realizar estudios morfométricos de pinguinos y obtuvo los siguientes datos</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(palmerpenguins)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>
+Attaching package: 'palmerpenguins'</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>The following objects are masked from 'package:datasets':
+
+    penguins, penguins_raw</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>
+Attaching package: 'dplyr'</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>The following object is masked from 'package:car':
+
+    recode</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>The following objects are masked from 'package:stats':
+
+    filter, lag</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>The following objects are masked from 'package:base':
+
+    intersect, setdiff, setequal, union</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb39"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Inspeccionamos los datos</span></span>
+<span id="cb39-2"><a href="#cb39-2" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(penguins)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 6 × 8
+  species island    bill_length_mm bill_depth_mm flipper_length_mm body_mass_g
+  &lt;fct&gt;   &lt;fct&gt;              &lt;dbl&gt;         &lt;dbl&gt;             &lt;int&gt;       &lt;int&gt;
+1 Adelie  Torgersen           39.1          18.7               181        3750
+2 Adelie  Torgersen           39.5          17.4               186        3800
+3 Adelie  Torgersen           40.3          18                 195        3250
+4 Adelie  Torgersen           NA            NA                  NA          NA
+5 Adelie  Torgersen           36.7          19.3               193        3450
+6 Adelie  Torgersen           39.3          20.6               190        3650
+# ℹ 2 more variables: sex &lt;fct&gt;, year &lt;int&gt;</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb41"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="fu">glimpse</span>(penguins)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Rows: 344
+Columns: 8
+$ species           &lt;fct&gt; Adelie, Adelie, Adelie, Adelie, Adelie, Adelie, Adel…
+$ island            &lt;fct&gt; Torgersen, Torgersen, Torgersen, Torgersen, Torgerse…
+$ bill_length_mm    &lt;dbl&gt; 39.1, 39.5, 40.3, NA, 36.7, 39.3, 38.9, 39.2, 34.1, …
+$ bill_depth_mm     &lt;dbl&gt; 18.7, 17.4, 18.0, NA, 19.3, 20.6, 17.8, 19.6, 18.1, …
+$ flipper_length_mm &lt;int&gt; 181, 186, 195, NA, 193, 190, 181, 195, 193, 190, 186…
+$ body_mass_g       &lt;int&gt; 3750, 3800, 3250, NA, 3450, 3650, 3625, 4675, 3475, …
+$ sex               &lt;fct&gt; male, female, female, NA, female, male, female, male…
+$ year              &lt;int&gt; 2007, 2007, 2007, 2007, 2007, 2007, 2007, 2007, 2007…</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb43"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Limpieza inicial</span></span>
+<span id="cb43-2"><a href="#cb43-2" aria-hidden="true" tabindex="-1"></a>penguins <span class="ot">&lt;-</span> <span class="fu">na.omit</span>(penguins)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Inicialmente es posible que esta base de datos tenga datos atípicos o vacíos, esto en la realidad podríamos atribuirlo a datos que no se tomaron, esfuerzo de muestreo o simplemente un paso previo a la normalización de sus datos.</p>
+<p>Posteriormente, usted podrá poceder a evaluar los datos de la siguiente manera.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb44"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a>penguins <span class="sc">%&gt;%</span></span>
+<span id="cb44-2"><a href="#cb44-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(species) <span class="sc">%&gt;%</span></span>
+<span id="cb44-3"><a href="#cb44-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(</span>
+<span id="cb44-4"><a href="#cb44-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">mean_bill =</span> <span class="fu">mean</span>(bill_length_mm),</span>
+<span id="cb44-5"><a href="#cb44-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">sd_bill =</span> <span class="fu">sd</span>(bill_length_mm),</span>
+<span id="cb44-6"><a href="#cb44-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">n =</span> <span class="fu">n</span>()</span>
+<span id="cb44-7"><a href="#cb44-7" aria-hidden="true" tabindex="-1"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 3 × 4
+  species   mean_bill sd_bill     n
+  &lt;fct&gt;         &lt;dbl&gt;   &lt;dbl&gt; &lt;int&gt;
+1 Adelie         38.8    2.66   146
+2 Chinstrap      48.8    3.34    68
+3 Gentoo         47.6    3.11   119</code></pre>
+</div>
+</div>
+<p>¿Cuál es la interpretación biológica probable?</p>
+<p>Los pingüinos <em>Gentoo</em> tienen un pico más largo en promedio que <em>Adelie</em> y <em>Chinstrap</em>, reflejando adaptaciones tróficas distintas.</p>
+<section id="comparación-de-especies-anova" class="level5">
+<h5 data-anchor-id="comparación-de-especies-anova">Comparación de especies (ANOVA)</h5>
+<p>Esto es algo que ya hemos visto en detalle previamente. Quizás deba preguntarse porque ANOVA es la mejor opción.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb46"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a>anova_penguins <span class="ot">&lt;-</span> <span class="fu">aov</span>(bill_length_mm <span class="sc">~</span> species, <span class="at">data =</span> penguins)</span>
+<span id="cb46-2"><a href="#cb46-2" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(anova_penguins)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>             Df Sum Sq Mean Sq F value Pr(&gt;F)    
+species       2   7015    3508   397.3 &lt;2e-16 ***
+Residuals   330   2914       9                   
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb48"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb48-1"><a href="#cb48-1" aria-hidden="true" tabindex="-1"></a><span class="fu">TukeyHSD</span>(anova_penguins)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>  Tukey multiple comparisons of means
+    95% family-wise confidence level
+
+Fit: aov(formula = bill_length_mm ~ species, data = penguins)
+
+$species
+                      diff       lwr        upr     p adj
+Chinstrap-Adelie 10.009851  8.982789 11.0369128 0.0000000
+Gentoo-Adelie     8.744095  7.880135  9.6080546 0.0000000
+Gentoo-Chinstrap -1.265756 -2.329197 -0.2023151 0.0148212</code></pre>
+</div>
+</div>
+<p>Si <code>p &lt; 0.05</code>, las medias difieren significativamente, lo que indica una diferenciación morfológica interespecífica.</p>
+</section>
+</section>
+<section id="índice-y-comparaciones-con-el-paquete-vegan" class="level4">
+<h4 data-anchor-id="índice-y-comparaciones-con-el-paquete-vegan">Índice y comparaciones con el paquete vegan</h4>
+<p>El paquete vegan es ampliamente usado en ecología y conservación para analizar riqueza, diversidad y similitud.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb50"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb50-1"><a href="#cb50-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(vegan)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: package 'vegan' was built under R version 4.5.2</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Loading required package: permute</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: package 'permute' was built under R version 4.5.2</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb54"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb54-1"><a href="#cb54-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Ejemplo: matriz de abundancia ficticia</span></span>
+<span id="cb54-2"><a href="#cb54-2" aria-hidden="true" tabindex="-1"></a>abund <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb54-3"><a href="#cb54-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">especie_A =</span> <span class="fu">c</span>(<span class="dv">5</span>, <span class="dv">2</span>, <span class="dv">0</span>, <span class="dv">1</span>),</span>
+<span id="cb54-4"><a href="#cb54-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">especie_B =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">3</span>, <span class="dv">5</span>, <span class="dv">2</span>),</span>
+<span id="cb54-5"><a href="#cb54-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">especie_C =</span> <span class="fu">c</span>(<span class="dv">3</span>, <span class="dv">1</span>, <span class="dv">0</span>, <span class="dv">4</span>)</span>
+<span id="cb54-6"><a href="#cb54-6" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb54-7"><a href="#cb54-7" aria-hidden="true" tabindex="-1"></a><span class="fu">rownames</span>(abund) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"Sitio1"</span>, <span class="st">"Sitio2"</span>, <span class="st">"Sitio3"</span>, <span class="st">"Sitio4"</span>)</span>
+<span id="cb54-8"><a href="#cb54-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb54-9"><a href="#cb54-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Índices de diversidad</span></span>
+<span id="cb54-10"><a href="#cb54-10" aria-hidden="true" tabindex="-1"></a>diversidad <span class="ot">&lt;-</span> <span class="fu">diversity</span>(abund, <span class="at">index =</span> <span class="st">"shannon"</span>)</span>
+<span id="cb54-11"><a href="#cb54-11" aria-hidden="true" tabindex="-1"></a>diversidad</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>   Sitio1    Sitio2    Sitio3    Sitio4 
+0.6615632 1.0114043 0.0000000 0.9556999 </code></pre>
+</div>
+</div>
+<p>Shannon (H’) mide la incertidumbre en la identidad de una especie tomada al azar. Cuanto mayor sea H’, mayor la diversidad.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb56"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb56-1"><a href="#cb56-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Riqueza específica</span></span>
+<span id="cb56-2"><a href="#cb56-2" aria-hidden="true" tabindex="-1"></a><span class="fu">specnumber</span>(abund)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Sitio1 Sitio2 Sitio3 Sitio4 
+     2      3      1      3 </code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb58"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb58-1"><a href="#cb58-1" aria-hidden="true" tabindex="-1"></a><span class="fu">barplot</span>(diversidad, <span class="at">main =</span> <span class="st">"Diversidad de Shannon por sitio"</span>, <span class="at">col =</span> <span class="st">"lightgreen"</span>, <span class="at">ylab =</span> <span class="st">"H'"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="Capitulo2_files/figure-html/unnamed-chunk-13-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>En biología de la conservación, esto puede indicar qué sitios son prioritarios para manejo o restauración.</p>
+
+
 </section>
 </section>
 
