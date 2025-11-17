@@ -1,0 +1,35 @@
+---
+title: "Laura Tatiana Lasso Ahumada"
+subtitle: "Estudiante de Biología — Universidad del Cauca"
+image: fotos/Vanesa.jpg
+format:
+  html:
+    toc: true
+    css: card.css
+margin-header: |
+  ![Laura Tatiana Lasso Ahumada](fotos/lauratatiana.jpg)
+---
+
+### Perfil
+
+Mi área de interés es la microbiología, especialmente en estudios enfocados en la microbiota y su influencia en la salud de las personas. Creciente interés en la biología molecular, inmunología, farmacología y la biotecnología con enfoque en salud humana. Actualmente desarrollo un proyecto centrado en el hongo Candida y la influencia de factores ambientales como el pH y la temperatura en su adherencia.
+
+### Líneas de Investigación
+
+-   Microbiología clínica
+
+-   Microbiología ambiental
+
+-   Micología Biología celular
+
+
+### Hoja de vida
+
+Podrás acceder a mi curriculum vitae en el siguiente enlace
+
+[Curriculum vitae](https://scienti.minciencias.gov.co/cvlac/visualizador/generarCurriculoCv.do?cod_rh=0002274576)
+
+### Contacto
+
+[ORCID](https://orcid.org/0009-0004-1379-5372)
+[E-mail](mailto:lauratlasso@unicauca.edu.co) <br>
