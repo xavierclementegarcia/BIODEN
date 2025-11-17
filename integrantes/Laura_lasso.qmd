@@ -1,7 +1,7 @@
 ---
 title: "Laura Tatiana Lasso Ahumada"
 subtitle: "Estudiante de Biología — Universidad del Cauca"
-image: fotos/Vanesa.jpg
+image: fotos/lauratatiana.jpg
 format:
   html:
     toc: true
